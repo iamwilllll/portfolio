@@ -1,0 +1,283 @@
+@import 'base.css';
+
+.navigation__container {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.navigation {
+    width: 30%;
+    margin: 10px auto;
+    padding: 10px;
+    gap: 50px;
+    border-radius: 40px;
+    justify-content: center;
+    animation-name: scroll;
+    animation-range: 0 150px;
+    animation-timeline: scroll();
+    animation-fill-mode: forwards;
+}
+
+.navigation__menu-button {
+    background: none;
+    border: none;
+    color: white;
+}
+
+.navigation__item {
+    fill: white;
+    stroke: white;
+    width: 25px;
+    height: 25px;
+    transition-duration: 0.1s;
+}
+
+.navigation__item:hover {
+    filter: drop-shadow(0px 0px 2px white);
+    transform: scale(1.2);
+    translate: 0px -7px;
+}
+
+@keyframes scroll {
+    100% {
+        backdrop-filter: blur(100px);
+        background: #ffffff1a;
+        border: solid 1px white;
+    }
+}
+
+.hero {
+    padding: 13%;
+    margin: auto;
+    color: white;
+}
+
+.hero__title {
+    margin: 0px 0px 10px 0px;
+}
+
+.hero__subtitle {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.hero__links-container {
+    margin-top: 40px;
+    gap: 30px;
+}
+
+.hero__links-container a:hover,
+.projects__links-sub--container a:hover {
+    background-color: #ffffff99;
+}
+
+.hero__links,
+.projects__links {
+    font-size: 15px;
+    text-align: center;
+    align-items: center;
+    color: white;
+    border: solid 1px white;
+    border-radius: 20px;
+    padding: 8px;
+    margin: -1px;
+    transition: 0.1s;
+    gap: 10px;
+    background-color: transparent;
+}
+
+.hero__icons,
+.projects__icons,
+.footer__icons {
+    fill: white;
+    stroke: white;
+    width: 40px;
+    height: 40px;
+}
+
+.projects__container,
+.skills__container,
+.about__container,
+.form__container {
+    padding: 0px 13% 0px 13%;
+    color: white;
+}
+
+.projects__sub-container {
+    padding-left: 0px;
+}
+
+.projects__item {
+    list-style: none;
+    margin: auto;
+    flex-direction: row;
+}
+
+.projects__item:first-child {
+    margin-bottom: 100px;
+}
+
+.projects__item figure {
+    margin: auto;
+}
+
+.projects__img {
+    border-radius: 10px;
+    transition: 0.3s;
+    width: 85%;
+    height: auto;
+}
+
+.projects__img:hover {
+    transform: scale(1.05);
+}
+
+.projects__name {
+    margin: 0px 0px 15px 0px;
+}
+
+.projects__description {
+    width: 500px;
+    font-size: 12px;
+}
+
+.projects__links-container {
+    gap: 10px;
+    margin-top: 0px;
+}
+
+.projects__container,
+.skills__container,
+.about__container,
+.form__container {
+    margin-top: 100px;
+}
+
+.skills__item {
+    min-width: 100%;
+    min-height: 150px;
+    border: solid white 1px;
+    border-radius: 10px;
+    color: white;
+    margin-top: 50px;
+}
+
+/* -----Form styles----- */
+
+.form {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    color: white;
+    background-color: #00000094;
+    border-radius: 20px;
+    padding: 50px;
+    width: 80%;
+    margin: auto;
+}
+
+.form__group {
+    gap: 10px;
+    flex-direction: column;
+}
+
+.form__label {
+    font-size: 17px;
+}
+
+.form__input,
+.form__textarea {
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: solid 1px #3d3d3d;
+    height: 30px;
+    width: 500px;
+    transition: 0.2s;
+    font-size: 15px;
+}
+
+.form__textarea {
+    resize: none;
+    height: 150px;
+}
+
+.form__input:focus,
+.form__textarea:focus {
+    outline: none;
+    border-bottom: solid 1px white;
+}
+
+.form__input:hover:focus,
+.form__textarea:hover:focus {
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 1px white;
+    outline: none;
+}
+
+.form__input::placeholder .form__textarea::placeholder {
+    background: none;
+}
+
+.form__button {
+    border: solid 1px white;
+    color: white;
+    border-radius: 20px;
+    padding: 15px 200px;
+    cursor: pointer;
+    transition: 0.2s;
+    background-color: transparent;
+    font-size: 15px;
+}
+
+.form__button:hover {
+    background-color: #ffffff99;
+}
+
+/* -----About styles----- */
+
+.about__description {
+    font-size: 15px;
+    margin-bottom: 100px;
+}
+
+/* -----Footer styles----- */
+.footer__container {
+    background-color: #000000;
+    color: white;
+    width: 100%;
+    padding: 20px 50px;
+    margin-top: 50px;
+}
+
+.footer__copyright,
+.footer__contact {
+    width: 50%;
+}
+
+.footer_description {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.footer__contact {
+    justify-content: flex-end;
+    gap: 35px;
+}
+
+.footer__links {
+    transition: 0.3s;
+}
+
+.footer_links:hover {
+    filter: drop-shadow(0px 0px 2px white);
+}
+
+.footer__icons {
+    fill: white;
+    stroke: white;
+    width: 35px;
+    height: 35px;
+}

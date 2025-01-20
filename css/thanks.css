@@ -1,0 +1,52 @@
+@import 'base.css';
+/** ------------------------------------- **/
+
+html,
+body,
+main {
+    height: 100%;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.thanks__container {
+    color: white;
+    text-align: center;
+    background-color: #00000090;
+    padding: 50px;
+    border-radius: 20px;
+    flex-direction: column;
+}
+
+.thanks__title {
+    margin-bottom: 0px;
+}
+
+.thanks__subtitle {
+    font-size: 15px;
+}
+
+.thanks__container--icons {
+    gap: 35px;
+    justify-content: center;
+    margin: 20px 0px 50px 0px;
+}
+
+.thanks__navigation {
+    font-size: 15px;
+    margin: auto;
+    width: 30%;
+    color: white;
+    border: solid 1px white;
+    border-radius: 20px;
+    padding: 10px;
+    transition: 0.1s;
+}
+
+.thanks__navigation:hover {
+    background-color: #ffffff99;
+}
