@@ -7,6 +7,7 @@ html {
     width: 100%;
     scroll-behavior: smooth;
     scroll-padding-top: 0rem;
+    height: 100%;
 }
 
 /* ----- Inherit box-sizing in all elements and pseudo-elements ----- */
@@ -25,6 +26,8 @@ body {
     font-size: 2rem;
     margin: 0;
     padding: 0;
+    background-color: v.$DarkGrey;
+    height: 100%;
 }
 
 /** ----- Global styles ----- **/

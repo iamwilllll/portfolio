@@ -1,0 +1,54 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+#particles-js {
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    width: 30%;
+    border-radius: 40px;
+    animation-name: scroll;
+    animation-range: 0 150px;
+    animation-timeline: scroll();
+    animation-fill-mode: forwards;
+
+    &__container {
+        display: flex;
+        margin: auto;
+        gap: 5rem;
+    }
+
+    &__item {
+        fill: v.$white;
+        stroke: v.$white;
+        width: 3rem;
+        height: 3rem;
+        transition-duration: 0.1s;
+
+        &:hover {
+            filter: drop-shadow(0px 0px 2px v.$white);
+            transform: scale(1.2);
+            translate: 0px -7px;
+        }
+    }
+
+    @keyframes scroll {
+        100% {
+            backdrop-filter: blur(100px);
+            background: #ffffff1a;
+            border: solid 1px v.$white;
+        }
+    }
+}
+
+

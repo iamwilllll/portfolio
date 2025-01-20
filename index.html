@@ -3,7 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Portfolio of a junior web developer, specialized in creating modern, responsive, and functional websites. Discover my projects, skills, and experience in web development." />
+        <meta
+            name="description"
+            content="Portfolio of a junior web developer, specialized in creating modern, responsive, and functional websites. Discover my projects, skills, and experience in web development."
+        />
         <meta name="keywords" content="portfolio, junior, developer, programmer, web developer" />
         <meta name="author" content="Wilfryn Viloria Rosario" />
         <link rel="stylesheet" type="text/css" href="build/css/app.css" />
@@ -14,8 +17,8 @@
     </head>
     <body>
         <div id="particles-js"></div>
-        <header class="navigation__container flex">
-            <nav class="navigation flex">
+        <header class="navigation">
+            <nav class="navigation__container">
                 <a href="#" aria-label="Home">
                     <svg class="navigation__item">
                         <use href="./assets/icons/icons.svg#icon-home"></use>
@@ -43,7 +46,11 @@
                 </a>
             </nav>
         </header>
+
         <main>
+
+
+            
             <header class="hero">
                 <div class="hero__content">
                     <h1 class="hero__title">Wilfryn Viloria Rosario</h1>
@@ -68,160 +75,12 @@
                     </a>
                 </div>
             </header>
-            <section class="projects__container" id="projects">
-                <h2 class="projects__title">Projects</h2>
-                <ul class="projects__sub-container">
-                    <li class="projects__item flex">
-                        <a href="#">
-                            <img src="assets/images/not-available-black.png" alt="" class="projects__img" width="495px" height="280px" loading="lazy" />
-                        </a>
-                        <figure>
-                            <h3 class="projects__name">Project Name</h3>
-                            <span>
-                                <svg class="projects__icons">
-                                    <use href="./assets/icons/icons.svg#icon-html"></use>
-                                </svg>
-                                <svg class="projects__icons">
-                                    <use href="./assets/icons/icons.svg#icon-css"></use>
-                                </svg>
-                                <svg class="projects__icons">
-                                    <use href="./assets/icons/icons.svg#icon-js"></use>
-                                </svg>
-                            </span>
-                            <figcaption>
-                                <p class="projects__description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum porro eius accusamus quis quae aliquam nam, deserunt, voluptatibus eaque placeat aspernatur, ducimus illo reiciendis corporis quam necessitatibus sapiente. Architecto, harum?</p>
-                            </figcaption>
-                            <section class="projects__links-container flex">
-                                <div class="projects__links-sub-container flex">
-                                    <a href="" class="projects__links flex">
-                                        <svg class="projects__icons">
-                                            <use href="./assets/icons/icons.svg#icon-git"></use>
-                                        </svg>
-                                        Code
-                                    </a>
-                                </div>
-                                <div class="projects__links-sub-container flex">
-                                    <a href="" class="projects__links flex">
-                                        <svg class="projects__icons">
-                                            <use href="./assets/icons/icons.svg#icon-link"></use>
-                                        </svg>
-                                        Go to page
-                                    </a>
-                                </div>
-                            </section>
-                        </figure>
-                    </li>
-                    <li class="projects__item flex">
-                        <a href="#">
-                            <img src="assets/images/not-available-black.png" alt="" width="495px" height="280px" class="projects__img" loading="lazy" />
-                        </a>
-                        <figure>
-                            <h3 class="projects__name">Project Name</h3>
-                            <span>
-                                <svg class="projects__icons">
-                                    <use href="./assets/icons/icons.svg#icon-html"></use>
-                                </svg>
-                                <svg class="projects__icons">
-                                    <use href="./assets/icons/icons.svg#icon-css"></use>
-                                </svg>
-                                <svg class="projects__icons">
-                                    <use href="./assets/icons/icons.svg#icon-js"></use>
-                                </svg>
-                            </span>
-                            <figcaption>
-                                <p class="projects__description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum porro eius accusamus quis quae aliquam nam, deserunt, voluptatibus eaque placeat aspernatur, ducimus illo reiciendis corporis quam necessitatibus sapiente. Architecto, harum?</p>
-                            </figcaption>
-                            <section class="projects__links-container flex">
-                                <div class="projects__links-sub-container flex">
-                                    <a href="" class="projects__links flex">
-                                        <svg class="projects__icons">
-                                            <use href="./assets/icons/icons.svg#icon-git"></use>
-                                        </svg>
-                                        Code
-                                    </a>
-                                </div>
-                                <div class="projects__links-sub-container flex">
-                                    <a href="" class="projects__links flex">
-                                        <svg class="projects__icons">
-                                            <use href="./assets/icons/icons.svg#icon-link"></use>
-                                        </svg>
-                                        Go to page
-                                    </a>
-                                </div>
-                            </section>
-                        </figure>
-                    </li>
-                </ul>
-            </section>
-            <section class="skills__container" id="skills">
-                <h2 class="skills__title">Skills</h2>
-                <div class="skills__item"></div>
-                <div class="skills__item"></div>
-                <div class="skills__item"></div>
-            </section>
-            <section class="about__container" id="about">
-                <h2 class="about__title">About Me</h2>
-                <div>
-                    <p class="about__description">
-                        My name is Wilfryn Viloria Rosario. My interest in computers from a very young age led me to this wonderful world at the age of 15. Since then, I have been passionate about creating functional solutions and constantly learning about web development.<br /><br />Currently, I am developing my portfolio as a junior web developer. I specialize in front-end design technologies and enjoy exploring new ways to improve user experience through code. One of my greatest achievements
-                        so far has been this portfolio, because it was my first "real" website. This has motivated me to keep learning and continue exploring this wonderful world of programming.<br /><br />
-                        My goal is to become a solid developer and contribute to projects that positively impact people. I believe in the power of collaborative learning and sharing knowledge to grow as a community.
-                    </p>
-                </div>
-            </section>
-            <div class="form__container" id="contact">
-                <h2 class="form__title">Contact Me</h2>
-                <form id="contactForm" class="form flex" action="/Portafolio/php/process-contact.php" method="POST" autocomplete="off">
-                    <div class="form__group flex">
-                        <label for="name" class="form__label">Name</label>
-                        <input type="text" id="name" name="name" class="form__input" />
-                    </div>
-                    <div class="form__group flex">
-                        <label for="email" class="form__label">Email</label>
-                        <input type="email" id="email" name="email" class="form__input" />
-                    </div>
-                    <div class="form__group flex">
-                        <label for="message" class="form__label">Message</label>
-                        <textarea id="message" name="message" class="form__textarea" required></textarea>
-                    </div>
-                    <div class="form__group form__group--button flex">
-                        <button type="submit" class="form__button">Send</button>
-                    </div>
-                </form>
-            </div>
+
+
+
+
+
         </main>
-        <footer class="footer__container flex">
-            <div class="footer__copyright">
-                <p class="footer__description">© 2024 Wilfryn Viloria Rosario. Almost all rights reserved</p>
-            </div>
-            <div class="footer__contact flex">
-                <a href="https://www.instagram.com/iam_willlll/" class="footer__links" target="_blank">
-                    <svg class="footer__icons" viewBox="0 0 24 24">
-                        <use href="./assets/icons/icons.svg#icon-instagram"></use>
-                    </svg>
-                </a>
-                <a href="https://api.whatsapp.com/send?phone=18099721528" class="footer__links" target="_blank">
-                    <svg class="footer__icons" viewBox="0 0 24 24">
-                        <use href="./assets/icons/icons.svg#icon-whatsapp"></use>
-                    </svg>
-                </a>
-                <a href="https://x.com/iam_willlll" class="footer__links" target="_blank">
-                    <svg class="footer__icons" viewBox="0 0 24 24">
-                        <use href="./assets/icons/icons.svg#icon-x"></use>
-                    </svg>
-                </a>
-                <a href="https://www.linkedin.com/in/wilfryn-viloria-9652102a6/" class="footer__links" target="_blank">
-                    <svg class="footer__icons" viewBox="0 0 24 24">
-                        <use href="./assets/icons/icons.svg#icon-linkedin"></use>
-                    </svg>
-                </a>
-                <a href="https://github.com/Wilfryn" class="footer__links" target="_blank">
-                    <svg class="footer__icons" viewBox="0 0 24 24">
-                        <use href="./assets/icons/icons.svg#icon-git-hub"></use>
-                    </svg>
-                </a>
-            </div>
-        </footer>
     </body>
     <script src="src/js/particles.min.js"></script>
     <script src="src/js/particles.js"></script>
