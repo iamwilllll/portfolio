@@ -9,7 +9,6 @@
 @mixin tablet {
     @media (min-width: v.$tablet) {
         @content;
-        
     }
 }
 
@@ -31,9 +30,12 @@
     gap: $gap;
 }
 
-
 @mixin list-reset {
     padding: 0;
     margin: 0;
     list-style: none;
+}
+
+@mixin container {
+    padding: 0px 13%;
 }

@@ -1,0 +1,51 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.hero {
+    @include m.container;
+    height: 100vh;
+    padding-top: 20%;
+    color: v.$white;    
+
+    &__title {
+        margin-bottom: 1rem;
+        font-size: 6rem;
+    }
+
+    &__subtitle {
+        font-size: 2rem;
+        font-weight: 300;
+    }
+
+    &__links__container {
+        margin-top: 4rem;
+        gap: 3rem;
+        display: flex;
+
+        & a:hover {
+            color: v.$white;
+            background-color: #ffffff99;
+        }
+    }
+
+    &__links {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+        font-size: 2rem;
+        padding: 1rem;
+        border: solid 1px v.$white;
+        border-radius: 20px;
+        color: v.$white;
+        background-color: transparent;
+        transition: 0.1s;
+    }
+
+    &__icons {
+        fill: v.$white;
+        stroke: v.$white;
+        width: 40px;
+        height: 40px;
+    }
+}
