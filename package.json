@@ -1,0 +1,27 @@
+{
+    "name": "portfolio-v1",
+    "version": "1.0.0",
+    "description": "Portfolio",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "sass": "sass --watch src/scss:build/css",
+        "dev": "gulp"
+    },
+    "keywords": [
+        "SASS",
+        "Gulp",
+        "Gulp-SASS"
+    ],
+    "author": "Wilfryn Viloria Rosario",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:iamwilllll/portfolio-v1.git"
+    },
+    "devDependencies": {
+        "gulp": "^5.0.0",
+        "gulp-sass": "^6.0.0",
+        "sass": "^1.83.4"
+    }
+}
