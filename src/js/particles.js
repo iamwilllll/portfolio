@@ -1,2 +1,2 @@
-particlesJS.load('particles-js', 'js/particles-options.json', function () {
+particlesJS.load('particles-js', 'src/js/particles-options.json', function () {
 });
