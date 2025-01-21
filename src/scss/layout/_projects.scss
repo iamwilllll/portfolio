@@ -5,15 +5,29 @@
     @include m.container;
     color: v.$white;
 
+    &__item:last-child {
+        padding-top: 10rem;
+    }
+
+    @include m.tablet {
+        &__item:last-child {
+            padding-top: 0;
+        }
+    }
     &__title {
         text-align: center;
     }
 
     &__container {
-        @include m.grid(2);
+        @include m.grid(1);
         @include m.list-reset;
+
         margin: auto;
         text-align: center;
+
+        @include m.tablet {
+            @include m.grid(2);
+        }
     }
 
     &__img {
@@ -42,7 +56,14 @@
 
 .projects__links__container {
     margin: auto;
-    width: 30%;
+    width: 70%;
+
+    @include m.tablet {
+        width: 80%;
+    }
+    @include m.desktop {
+        width: 50%;
+    }
     .projects__links {
         display: flex;
         justify-content: center;

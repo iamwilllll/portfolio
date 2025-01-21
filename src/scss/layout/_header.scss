@@ -15,17 +15,28 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px;
-    width: 30%;
+    width: 90%;
     border-radius: 40px;
     animation-name: scroll;
     animation-range: 0 150px;
     animation-timeline: scroll();
     animation-fill-mode: forwards;
+    @include m.tablet {
+        width: 60%;
+    }
+
+    @include m.desktop {
+        width: 40%;
+    }
 
     &__container {
         display: flex;
         margin: auto;
-        gap: 5rem;
+        gap: 4rem;
+
+        @include m.tablet {
+            gap: 5rem;
+        }
     }
 
     &__item {
@@ -48,7 +59,6 @@
             background: #ffffff1a;
             border: solid 1px v.$white;
             z-index: 10;
-
         }
     }
 }
