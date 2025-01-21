@@ -2,8 +2,8 @@
 @use '../base/mixins' as m;
 
 #particles-js {
-    width: 100%;
-    position: fixed;
+    position: absolute;
+    inset: 0;
     z-index: -1;
 }
 
@@ -47,8 +47,8 @@
             backdrop-filter: blur(100px);
             background: #ffffff1a;
             border: solid 1px v.$white;
+            z-index: 10;
+
         }
     }
 }
-
-
