@@ -5,21 +5,18 @@
     @include m.container;
 
     height: 100vh;
-    padding-top: 60%;
+    padding-top: 40%;
     color: v.$white;
 
     @include m.tablet {
-        padding-top: 50%;
+        padding-top: 30%;
     }
 
     @include m.desktop {
         padding-top: 20%;
     }
 
-    @include m.desktopXL {
-        padding-top: 30%;
 
-    }
     &__title {
         margin-bottom: 1rem;
         font-size: 6rem;
