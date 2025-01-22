@@ -5,15 +5,26 @@
     @include m.container;
     color: v.$white;
 
-    &__item:last-child {
-        padding-top: 10rem;
-    }
+    &__item {
+        &:last-child {
+            padding-top: 10rem;
+        }
 
-    @include m.tablet {
-        &__item:last-child {
-            padding-top: 0;
+        @include m.tablet {
+            &:last-child {
+                padding-top: 0;
+            }
+        }
+
+        figure {
+            margin-top: 1rem;
         }
     }
+
+    &__name {
+        margin-bottom: 1.5rem;
+    }
+
     &__title {
         text-align: center;
     }
