@@ -50,10 +50,10 @@
             <header class="hero">
                 <div class="hero__content">
                     <h1 class="hero__title">Wilfryn Viloria Rosario</h1>
-                    <h2 class="hero__subtitle no-margin">
+                    <h2 class="hero__subtitle">
                         Front-end developer &lt;/&gt;
                         <br />
-                        <span class="hero__description no-margin"> I am a junior web developer passionate about continuous learning. </span>
+                        <span class="hero__description"> I am a junior web developer passionate about continuous learning. </span>
                     </h2>
                 </div>
                 <div id="links" class="hero__links__container">
@@ -140,9 +140,28 @@
                     </li>
                 </ul>
             </section>
+            <section class="form" id="contact">
+                <h2 class="form__title">Contact Me</h2>
+                <form id="contactForm" class="form__container" action="/config/db_config.php" method="POST">
+                    <div class="form__group">
+                        <label for="name" class="form__label">Name</label>
+                        <input type="text" id="name" name="name" class="form__input" />
+                    </div>
+                    <div class="form__group">
+                        <label for="email" class="form__label">Email</label>
+                        <input type="email" id="email" name="email" class="form__input" />
+                    </div>
+                    <div class="form__group">
+                        <label for="message" class="form__label">Message</label>
+                        <textarea id="message" name="message" class="form__textarea" required></textarea>
+                    </div>
+                    <div class="form__group form__group__button">
+                        <button type="submit" class="form__button">Send</button>
+                    </div>
+                </form>
+            </section>
         </main>
     </body>
     <script src="src/js/particles.min.js"></script>
     <script src="build/js/app.js"></script>
 </html>
-

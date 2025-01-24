@@ -37,5 +37,7 @@
 }
 
 @mixin container {
+    color: v.$white;
     padding: 0px 13%;
+    margin-top: 20rem;
 }
