@@ -75,9 +75,12 @@
 }
 
 .hero {
+  color: #ffffff;
   padding: 0px 13%;
+  margin-top: 20rem;
   height: 100vh;
   padding-top: 40%;
+  margin-top: 0;
   color: #ffffff;
 }
 @media (min-width: 768px) {
@@ -97,6 +100,7 @@
 .hero__subtitle {
   font-size: 2rem;
   font-weight: 300;
+  padding: 1rem;
 }
 .hero__links__container {
   display: grid;
@@ -143,8 +147,10 @@
 }
 
 .projects {
-  padding: 0px 13%;
   color: #ffffff;
+  padding: 0px 13%;
+  margin-top: 20rem;
+  text-align: center;
 }
 .projects__item:last-child {
   padding-top: 10rem;
@@ -159,9 +165,6 @@
 }
 .projects__name {
   margin-bottom: 1.5rem;
-}
-.projects__title {
-  text-align: center;
 }
 .projects__container {
   display: grid;
@@ -190,14 +193,15 @@
 }
 .projects__name {
   font-size: 4rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 .projects__icons {
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
 }
 .projects__description {
   color: #ffffff;
+  font-size: 1.6rem;
 }
 
 .projects__links__container {
@@ -224,9 +228,79 @@
   margin: auto;
   padding: 0.5rem;
   gap: 1rem;
-  color: #ffffff;
   background-color: transparent;
   transition: 0.1s;
+  color: #ffffff;
+}
+
+.form {
+  text-align: center;
+  color: #ffffff;
+  padding: 0px 13%;
+  margin-top: 20rem;
+  color: #ffffff;
+}
+.form__container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 80%;
+  padding: 5rem;
+  margin: auto;
+  gap: 30px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5803921569);
+  border-radius: 2rem;
+}
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.form__label {
+  font-size: 1.5rem;
+  text-align: left;
+}
+.form__input, .form__textarea {
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  border-bottom: solid 1px #3d3d3d;
+  height: 30px;
+  width: 500px;
+  font-size: 15px;
+  transition: 0.2s;
+}
+.form__input:focus, .form__input:hover, .form__textarea:focus, .form__textarea:hover {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: solid 1px #ffffff;
+}
+.form__input:-webkit-autofill, .form__textarea:-webkit-autofill {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border-bottom: solid 1px #ffffff !important;
+  -webkit-text-fill-color: #ffffff;
+  transition: background-color 0s ease-in-out 1000s;
+}
+.form__textarea {
+  resize: none;
+  height: 150px;
+}
+.form__button {
+  border: solid 1px #ffffff;
+  border-radius: 2rem;
+  background-color: transparent;
+  color: #ffffff;
+  padding: 1.5rem 20rem;
+  transition: 0.2s;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.form__button:hover {
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
