@@ -22,7 +22,7 @@
     animation-timeline: scroll();
     animation-fill-mode: forwards;
     @include m.tablet {
-        width: 40%;
+        width: 60%;
     }
 
     @include m.desktop {
