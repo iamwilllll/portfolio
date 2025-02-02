@@ -23,29 +23,40 @@ export function css(done) {
 }
 
 export async function crop(done) {
-    const inputFolder = 'src/img/gallery/full';
-    const outputFolder = 'src/img/gallery/thumb';
+    const inputFolder = 'assets/images';
+    const outputFolder = 'build/img/';
     const width = 250;
     const height = 180;
+
     if (!fs.existsSync(outputFolder)) {
         fs.mkdirSync(outputFolder, { recursive: true });
     }
+
     const images = fs.readdirSync(inputFolder).filter(file => {
-        return /\.(jpg)$/i.test(path.extname(file));
+        return /\.(jpg|png)$/i.test(path.extname(file));
     });
+
     try {
-        images.forEach(file => {
+        for (const file of images) {
             const inputFile = path.join(inputFolder, file);
-            const outputFile = path.join(outputFolder, file);
-            sharp(inputFile)
-                .resize(width, height, {
-                    position: 'centre',
-                })
+            const outputFile = path.join(outputFolder, file); // Imagen redimensionada
+            const outputWebP = path.join(outputFolder, path.parse(file).name + '.webp'); // Versión WebP
+
+            // Procesar imagen en su formato original
+            await sharp(inputFile)
+                .resize(width, height, { fit: 'cover', position: 'centre' })
                 .toFile(outputFile);
-        });
+
+            // Convertir a WebP
+            await sharp(inputFile)
+                .resize(width, height, { fit: 'cover', position: 'centre' })
+                .toFormat('webp', { quality: 80 }) // Calidad 80%
+                .toFile(outputWebP);
+        }
+
         done();
     } catch (error) {
-        console.log(error);
+        console.log('Error al procesar imágenes:', error);
     }
 }
 
