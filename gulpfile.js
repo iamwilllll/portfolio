@@ -30,8 +30,6 @@ export function css(done) {
 export async function crop(done) {
     const inputFolder = 'src/assets/images';
     const outputFolder = 'build/img/';
-    const width = 250;
-    const height = 180;
 
     if (!fs.existsSync(outputFolder)) {
         fs.mkdirSync(outputFolder, { recursive: true });
@@ -48,11 +46,9 @@ export async function crop(done) {
             const outputWebP = path.join(outputFolder, path.parse(file).name + '.webp'); // Versión WebP
 
             // Procesar imagen en su formato original
-            await sharp(inputFile).resize(width, height, { fit: 'cover', position: 'centre' }).toFile(outputFile);
 
             // Convertir a WebP
             await sharp(inputFile)
-                .resize(width, height, { fit: 'cover', position: 'centre' })
                 .toFormat('webp', { quality: 80 }) // Calidad 80%
                 .toFile(outputWebP);
         }
