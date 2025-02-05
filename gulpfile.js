@@ -10,12 +10,17 @@ import terser from 'gulp-terser';
 import sharp from 'sharp';
 
 export function js(done) {
-    src('src/js/app.js').pipe(terser()).pipe(dest('build/js'));
+    // Incluir archivos .js
+    src('src/scripts/**/*.js').pipe(terser()).pipe(dest('build/js'));
+
+    // Incluir archivos .json
+    src('src/scripts/**/*.json').pipe(dest('build/js')); // O cambiar el destino según tu necesidad
+
     done();
 }
 
 export function css(done) {
-    src('src/scss/app.scss', { sourcemaps: true })
+    src('src/styles/main.scss', { sourcemaps: true })
         .pipe(sass({ outputStyle: 'compressed' }))
         .pipe(sass().on('error', sass.logError))
         .pipe(dest('build/css', { sourcemaps: '.' }));
@@ -23,7 +28,7 @@ export function css(done) {
 }
 
 export async function crop(done) {
-    const inputFolder = 'assets/images';
+    const inputFolder = 'src/assets/images';
     const outputFolder = 'build/img/';
     const width = 250;
     const height = 180;
@@ -43,9 +48,7 @@ export async function crop(done) {
             const outputWebP = path.join(outputFolder, path.parse(file).name + '.webp'); // Versión WebP
 
             // Procesar imagen en su formato original
-            await sharp(inputFile)
-                .resize(width, height, { fit: 'cover', position: 'centre' })
-                .toFile(outputFile);
+            await sharp(inputFile).resize(width, height, { fit: 'cover', position: 'centre' }).toFile(outputFile);
 
             // Convertir a WebP
             await sharp(inputFile)
@@ -61,8 +64,8 @@ export async function crop(done) {
 }
 
 export function dev() {
-    watch('src/scss/**/*.scss', css);
-    watch('src/js/**/*.js', js);
+    watch('src/styles/**/*.scss', css);
+    watch('src/scripts/**/*.js', js);
 }
 
 export default series(crop, js, css, dev);

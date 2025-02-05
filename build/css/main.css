@@ -3,14 +3,14 @@
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 100 900;
-  src: url("/assets/fonts/Montserrat.ttf");
+  src: url("/src/assets/fonts/Montserrat.ttf");
 }
 /* Italic */
 @font-face {
   font-family: "Montserrat";
   font-style: italic;
   font-weight: 100 900;
-  src: url("/assets/fonts/Montserrat-Italic.ttf");
+  src: url("/src/assets/fonts/Montserrat-Italic.ttf");
 }
 #particles-js {
   position: absolute;
@@ -731,4 +731,4 @@ img {
 
 main > section {
   padding: 10rem 0;
-}/*# sourceMappingURL=app.css.map */
+}/*# sourceMappingURL=main.css.map */
