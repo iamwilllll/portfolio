@@ -12,12 +12,12 @@
 
 Este portafolio ha sido construido utilizando las siguientes tecnologías y herramientas:g
 
-* **Desarrollo web**:*
+* **Desarrollo web**:
     * HTML
     * CSS
     * JavaScript
     * PHP
-* **Automatización de tareas**:*
+* **Automatización de tareas**:
     * Gulp
     * SASS
     * NPM
