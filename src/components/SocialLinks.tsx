@@ -1,25 +1,25 @@
 /* Import icons */
-import { GitHubIcon } from './icons/GitHubIcon';
-import { LinkedinIcon } from './icons/LinkedinIcon';
-import { MailIcon } from './icons/MainIcon';
+import { GitHubIcon } from '../../public/icons/GitHubIcon';
+import { LinkedinIcon } from '../../public/icons/LinkedinIcon';
+import { MailIcon } from '../../public/icons/MainIcon';
 
 function SocialLinks() {
     return (
         <nav className="flex gap-3">
             <a
-                className="text-primary-color hover:scale-125 transition hover:cursor-pointer hover:text-second-font-color"
+                className="text-second-color hover:scale-125 transition hover:cursor-pointer hover:text-first-font-color"
                 title="GitHub icon"
             >
                 <GitHubIcon />
             </a>
             <a
-                className="text-primary-color hover:scale-125 transition hover:cursor-pointer hover:text-second-font-color"
+                className="text-second-color hover:scale-125 transition hover:cursor-pointer hover:text-first-font-color"
                 title="Linkedin icon"
             >
                 <LinkedinIcon />
             </a>
             <a
-                className="text-primary-color hover:scale-125 transition hover:cursor-pointer hover:text-second-font-color"
+                className="text-second-color hover:scale-125 transition hover:cursor-pointer hover:text-first-font-color"
                 title="Mail icon"
             >
                 <MailIcon />
