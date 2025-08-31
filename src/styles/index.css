@@ -4,18 +4,22 @@
     --primary-font: 'Raleway', sans-serif;
 
     --primary-color: #b292ff;
+    --nav-bg-color: #211f23;
     --first-bg-color: #0c0c0d;
     --second-bg-color: #131313;
     --third-bg-color: #272727;
-    --primary-font-color: #c8c8c8;
+    --first-font-color: #b292ff;
+    --second-font-color: #ffffff;
 }
 
 @theme {
     --font-primary: var(--primary-font);
 
     --color-primary-color: var(--primary-color);
+    --color-nav-bg-color: var(--nav-bg-color);
     --color-first-bg-color: var(--first-bg-color);
     --color-second-bg-color: var(--second-bg-color);
     --color-third-bg-color: var(--third-bg-color);
-    --color-font-primary: var(--primary-font-color);
+    --color-first-font-color: var(--first-font-color);
+    --color-second-font-color: var(--second-font-color);
 }
