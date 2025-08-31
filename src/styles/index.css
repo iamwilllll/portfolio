@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+
+:root {
+    --primary-font: 'Raleway', sans-serif;
+
+    --primary-color: #b292ff;
+    --first-bg-color: #0c0c0d;
+    --second-bg-color: #131313;
+    --third-bg-color: #272727;
+    --primary-font-color: #c8c8c8;
+}
+
+@theme {
+    --font-primary: var(--primary-font);
+
+    --color-primary-color: var(--primary-color);
+    --color-first-bg-color: var(--first-bg-color);
+    --color-second-bg-color: var(--second-bg-color);
+    --color-third-bg-color: var(--third-bg-color);
+    --color-font-primary: var(--primary-font-color);
+}
