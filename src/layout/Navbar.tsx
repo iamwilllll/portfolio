@@ -2,8 +2,8 @@
 import { useState } from 'react';
 
 /* Import icons .tsx */
-import { MenuIcon } from '../../public/icons/MenuIcon';
-import { CloseIcon } from '../../public/icons/CloseIcon';
+import { MenuIcon } from '../components/icons/MenuIcon';
+import { CloseIcon } from '../components/icons/CloseIcon';
 
 /* Import components */
 import SocialLinks from '../components/SocialLinks';

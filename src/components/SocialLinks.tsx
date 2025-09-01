@@ -1,7 +1,7 @@
 /* Import icons */
-import { GitHubIcon } from '../../public/icons/GitHubIcon';
-import { LinkedinIcon } from '../../public/icons/LinkedinIcon';
-import { MailIcon } from '../../public/icons/MainIcon';
+import { GitHubIcon } from './icons/GitHubIcon';
+import { LinkedinIcon } from './icons/LinkedinIcon';
+import { MailIcon } from './icons/MainIcon';
 
 function SocialLinks() {
     return (

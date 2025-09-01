@@ -1,8 +1,8 @@
-import { LinkedinIcon } from '../../public/icons/LinkedinIcon';
+import { LinkedinIcon } from '../components/icons/LinkedinIcon';
 
 function Header() {
     return (
-        <section className="h-screen w-full flex flex-col lg:flex-row-reverse justify-center items-center px-5 lg:px-50 gap-5">
+        <section className="h-screen w-full flex flex-col lg:flex-row-reverse justify-center items-center p-10 lg:px-50">
             <figure className="w-11/12 lg:w-1/2 flex items-center justify-center">
                 <img
                     src="./avatar.png"
