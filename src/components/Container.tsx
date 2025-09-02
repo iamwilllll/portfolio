@@ -8,7 +8,7 @@ type ContainerProps = {
 function Container({ children, className = '' }: ContainerProps) {
     return (
         <section
-            className={`h-screen w-full flex flex-col lg:flex-row-reverse justify-center items-center p-10 lg:px-50 ${className}`}
+            className={`h-screen w-full p-10 lg:px-50 ${className}`}
         >
             {children}
         </section>

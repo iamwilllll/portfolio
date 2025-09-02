@@ -1,9 +1,9 @@
 import { LinkedinIcon } from '../components/icons/LinkedinIcon';
-
 import Container from '../components/Container';
+
 function Header() {
     return (
-        <Container>
+        <Container className="flex flex-col lg:flex-row-reverse justify-center items-center">
             <figure className="w-11/12 lg:w-1/2 flex items-center justify-center">
                 <img
                     src="./avatar.png"
