@@ -1,5 +1,5 @@
 /* Import states */
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 /* Import icons .tsx */
 import { MenuIcon } from '../components/icons/MenuIcon';
@@ -11,6 +11,16 @@ import SocialLinks from '../components/SocialLinks';
 function Navbar() {
     const [isActive, setIsActive] = useState(false);
 
+    const [scrollY, setScrollY] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollY(window.scrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
     return (
         <>
             <button
@@ -22,8 +32,7 @@ function Navbar() {
                 <MenuIcon />
             </button>
             <nav
-                className={`fixed left-0 w-full z-1 transition-all duration-500 bg-[#000000db] ${isActive ? 'h-screen top-0' : 'h-0 -top-50'} flex flex-col items-center justify-center gap-10 text-second-font-color lg:top-5 lg:left-1/2 lg:-translate-x-1/2 lg:h-15 lg:w-10/10 lg:max-w-[768px] lg:flex-row lg:rounded-full lg:px-10 lg:bg-nav-bg-color
-`}
+                className={`fixed left-0 w-full z-1 transition-all duration-500 bg-[#000000db] ${isActive ? 'h-screen top-0' : 'h-0 -top-50'} flex flex-col items-center justify-center gap-10 text-second-font-color lg:top-5 lg:left-1/2 lg:-translate-x-1/2 lg:h-15 lg:w-10/10 lg:max-w-[768px] lg:flex-row lg:rounded-full lg:px-10 lg:bg-nav-bg-color ${scrollY > 0 ? 'lg:scale-70 lg:opacity-70' : 'lg:scale-100 lg:opacity-100'}`}
             >
                 <button
                     aria-label="close navigation menu"
