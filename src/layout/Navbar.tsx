@@ -15,14 +15,15 @@ function Navbar() {
         <>
             <button
                 onClick={() => setIsActive(true)}
-                className="fixed top-5 right-5 z-1 text-second-font-color hover:cursor-pointer lg:hidden"
+                className="text-second-font-color hover:cursor-pointer lg:hidden fixed z-1 top-5 right-5"
                 aria-label="open navigation menu"
                 title="Open menu"
             >
                 <MenuIcon />
             </button>
             <nav
-                className={`fixed z-50 transition-all duration-500 ${isActive ? 'inset-0 w-screen h-screen' : 'top-[-100%] h-0'} flex flex-col items-center justify-center gap-10 bg-[#000000db] text-second-font-color lg:top-5 lg:left-1/2 lg:-translate-x-1/2 lg:h-15 lg:w-5/10 lg:flex-row lg:bg-nav-bg-color lg:rounded-full lg:px-10`}
+                className={`fixed left-0 w-full z-1 transition-all duration-500 bg-[#000000db] ${isActive ? 'h-screen top-0' : 'h-0 -top-50'} flex flex-col items-center justify-center gap-10 text-second-font-color lg:top-5 lg:left-1/2 lg:-translate-x-1/2 lg:h-15 lg:w-10/10 lg:max-w-[768px] lg:flex-row lg:rounded-full lg:px-10 lg:bg-nav-bg-color
+`}
             >
                 <button
                     aria-label="close navigation menu"
