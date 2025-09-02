@@ -15,44 +15,44 @@ function Navbar() {
         <>
             <button
                 onClick={() => setIsActive(true)}
-                className="text-second-font-color hover:cursor-pointer md:hidden fixed z-1 top-5 right-5"
+                className="fixed top-5 right-5 z-1 text-second-font-color hover:cursor-pointer lg:hidden"
                 aria-label="open navigation menu"
                 title="Open menu"
             >
                 <MenuIcon />
             </button>
             <nav
-                className={`fixed transition-all duration-500 z-1 ${isActive ? 'h-screen top-0' : 'h-0 -top-50'} left-0 w-full md:top-5 md:left-1/2 md:-translate-x-1/2 md:w-9/10 max-w-[768px] md:h-15 lg:w-5/10 bg-[#000000db] md:bg-nav-bg-color flex flex-col md:flex-row items-center justify-center text-second-font-color gap-10 md:rounded-full lg:px-10`}
+                className={`fixed z-50 transition-all duration-500 ${isActive ? 'inset-0 w-screen h-screen' : 'top-[-100%] h-0'} flex flex-col items-center justify-center gap-10 bg-[#000000db] text-second-font-color lg:top-5 lg:left-1/2 lg:-translate-x-1/2 lg:h-15 lg:w-5/10 lg:flex-row lg:bg-nav-bg-color lg:rounded-full lg:px-10`}
             >
                 <button
                     aria-label="close navigation menu"
                     title="Close menu"
                     onClick={() => setIsActive(false)}
-                    className="text-second-font-color hover:text-first-font-color transition-colors hover:cursor-pointer md:hidden"
+                    className="text-second-font-color hover:text-first-font-color transition-colors hover:cursor-pointer lg:hidden"
                 >
                     <CloseIcon />
                 </button>
                 <a
                     title="Home"
-                    className="hover:text-first-font-color transition hover:underline text-2xl hover:scale-110 md:text-lg hover:cursor-pointer"
+                    className="hover:text-first-font-color transition hover:underline text-2xl hover:scale-110 lg:text-lg hover:cursor-pointer"
                 >
                     HOME
                 </a>
                 <a
                     title="Projects"
-                    className="hover:text-first-font-color transition hover:underline text-2xl hover:scale-110 md:text-lg hover:cursor-pointer"
+                    className="hover:text-first-font-color transition hover:underline text-2xl hover:scale-110 lg:text-lg hover:cursor-pointer"
                 >
                     PROJECTS
                 </a>
                 <a
                     title="About me"
-                    className="hover:text-first-font-color transition hover:underline text-2xl hover:scale-110 md:text-lg hover:cursor-pointer"
+                    className="hover:text-first-font-color transition hover:underline text-2xl hover:scale-110 lg:text-lg hover:cursor-pointer"
                 >
                     ABOUT ME
                 </a>
                 <a
                     title="Contact me"
-                    className="hover:text-first-font-color transition hover:underline text-2xl hover:scale-110 md:text-lg hover:cursor-pointer"
+                    className="hover:text-first-font-color transition hover:underline text-2xl hover:scale-110 lg:text-lg hover:cursor-pointer"
                 >
                     CONTACT ME
                 </a>
