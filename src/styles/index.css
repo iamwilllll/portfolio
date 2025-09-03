@@ -11,7 +11,8 @@
     --third-bg-color: #272727;
     --first-font-color: #ffffff;
     --second-font-color: #b292ff;
-    --third-font-color: #C1C1C1;
+    --third-font-color: #c1c1c1;
+    --border-color: #303030;
 }
 
 @theme {
@@ -26,4 +27,5 @@
     --color-first-font-color: var(--first-font-color);
     --color-second-font-color: var(--second-font-color);
     --color-third-font-color: var(--third-font-color);
+    --color-border-color: var(--border-color);
 }
