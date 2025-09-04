@@ -8,7 +8,7 @@ function App() {
         <main className=" max-w-[2256px] font-first-font m-auto">
             <Navbar />
             <Header />
-            <Projects/>
+            <Projects />
         </main>
     );
 }

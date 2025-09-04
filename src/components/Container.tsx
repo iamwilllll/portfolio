@@ -6,13 +6,7 @@ type ContainerProps = {
 };
 
 function Container({ children, className = '' }: ContainerProps) {
-    return (
-        <section
-            className={`h-screen max-h-350 w-full p-10 lg:px-50 ${className}`}
-        >
-            {children}
-        </section>
-    );
+    return <section className={`h-screen max-h-350 w-full p-10 lg:px-50 ${className}`}>{children}</section>;
 }
 
 export default Container;

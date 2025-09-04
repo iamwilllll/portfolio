@@ -51,7 +51,7 @@ function ProjectItem({
                         target="_blank"
                         className="bg-third-bg-color w-35 h-10 rounded-full flex gap-2 items-center justify-center font-bold font-second-font text-first-font-color hover:scale-110 hover:bg-primary-color transition "
                     >
-                        <LinkIcon/>
+                        <LinkIcon />
                         Preview
                     </a>
                 </div>
