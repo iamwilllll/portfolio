@@ -21,14 +21,10 @@ function Navbar() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
     return (
         <>
-            <button
-                onClick={() => setIsActive(true)}
-                className="text-second-font-color hover:cursor-pointer lg:hidden fixed z-1 top-5 right-5"
-                aria-label="open navigation menu"
-                title="Open menu"
-            >
+            <button onClick={() => setIsActive(true)} className="text-second-font-color hover:cursor-pointer lg:hidden fixed z-1 top-5 right-5" aria-label="open navigation menu" title="Open menu">
                 <MenuIcon />
             </button>
             <nav
