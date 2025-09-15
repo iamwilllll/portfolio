@@ -8,6 +8,18 @@ import { CloseIcon } from '../components/icons/CloseIcon';
 /* Import components */
 import SocialLinks from '../components/SocialLinks';
 
+type navLinksType = {
+    name: string;
+    href: string;
+};
+
+const navLinks: navLinksType[] = [
+    { name: 'Home', href: '' },
+    { name: 'Projects', href: '' },
+    { name: 'About Me', href: '' },
+    { name: 'Contact Me', href: '' }
+];
+
 function Navbar() {
     const [isActive, setIsActive] = useState(false);
 
@@ -38,30 +50,13 @@ function Navbar() {
                 >
                     <CloseIcon />
                 </button>
-                <a
-                    title="Home"
-                    className="hover:text-first-font-color transition hover:underline text-2xl hover:scale-110 lg:text-lg hover:cursor-pointer"
-                >
-                    HOME
-                </a>
-                <a
-                    title="Projects"
-                    className="hover:text-first-font-color transition hover:underline text-2xl hover:scale-110 lg:text-lg hover:cursor-pointer"
-                >
-                    PROJECTS
-                </a>
-                <a
-                    title="About me"
-                    className="hover:text-first-font-color transition hover:underline text-2xl hover:scale-110 lg:text-lg hover:cursor-pointer"
-                >
-                    ABOUT ME
-                </a>
-                <a
-                    title="Contact me"
-                    className="hover:text-first-font-color transition hover:underline text-2xl hover:scale-110 lg:text-lg hover:cursor-pointer"
-                >
-                    CONTACT ME
-                </a>
+
+                {navLinks.map(item => (
+                    <a title={item.name} key={item.name} className="hover:text-first-font-color transition hover:underline text-2xl hover:scale-110 lg:text-lg hover:cursor-pointer uppercase">
+                        {item.name}
+                    </a>
+                ))}
+
                 <SocialLinks />
             </nav>
         </>
