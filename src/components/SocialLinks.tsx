@@ -3,7 +3,6 @@ import type { ReactNode } from 'react';
 
 import { GitHubIcon } from './icons/GitHubIcon';
 import { LinkedinIcon } from './icons/LinkedinIcon';
-import { MailIcon } from './icons/MainIcon';
 
 type socialLinksType = {
     icon: ReactNode;
@@ -12,8 +11,7 @@ type socialLinksType = {
 function SocialLinks() {
     const socialLinks: socialLinksType[] = [
         { icon: <GitHubIcon />, href: 'https://github.com/iamwilllll' },
-        { icon: <LinkedinIcon />, href: '' },
-        { icon: <MailIcon />, href: 'mailto:wilfrynbusiness@gmail.com' }
+        { icon: <LinkedinIcon />, href: 'https://www.linkedin.com/in/iamwilllll' }
     ];
 
     return (
@@ -25,6 +23,7 @@ function SocialLinks() {
                     title="icon"
                     href={item.href}
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
                     {item.icon}
                 </a>
