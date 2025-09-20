@@ -10,4 +10,3 @@ export function Git(props: SVGProps<SVGSVGElement>) {
         </svg>
     );
 }
-
