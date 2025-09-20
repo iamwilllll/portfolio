@@ -16,8 +16,8 @@ type navLinksType = {
 const navLinks: navLinksType[] = [
     { name: 'Home', href: '#' },
     { name: 'Projects', href: '#ProjectsSection' },
-    { name: 'About Me', href: '' },
-    { name: 'Contact Me', href: '' }
+    { name: 'Skills', href: '#technologies' },
+    { name: 'Contact Me', href: '#contactMe' }
 ];
 
 function Navbar() {
