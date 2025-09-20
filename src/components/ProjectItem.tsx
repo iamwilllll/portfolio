@@ -9,6 +9,7 @@ type ProjectItemProps = {
     projectTitle: string;
     projectDescription: string;
     projectImage: string;
+    AltProjectImage: string;
     technologies: string[];
     gitHunLink: string;
     previewLink: string;
@@ -20,7 +21,15 @@ type linksListType = {
     icon: ReactNode;
 };
 
-function ProjectItem({ projectTitle, projectDescription, technologies, projectImage, gitHunLink, previewLink }: ProjectItemProps) {
+function ProjectItem({
+    projectTitle,
+    projectDescription,
+    technologies,
+    projectImage,
+    AltProjectImage,
+    gitHunLink,
+    previewLink
+}: ProjectItemProps) {
     const linksList: linksListType[] = [
         { name: 'GitHub', href: gitHunLink, icon: <GitHubIcon /> },
         { name: 'Preview', href: previewLink, icon: <LinkIcon /> }
