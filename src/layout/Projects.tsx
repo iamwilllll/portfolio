@@ -9,7 +9,7 @@ function Projects() {
                 <ProjectItem
                     projectTitle="Taskodoro"
                     projectDescription="Taskodoro is an interactive to-do list web app that lets you easily add, complete, and delete tasks. It includes a timer based on the Pomodoro Technique to improve time management."
-                    projectImage={'/taskodoro.webp'}
+                    projectImage={'/taskodoro.png'}
                     AltProjectImage="Hover project image"
                     technologies={['JavaScript', 'React', 'Tailwind']}
                     gitHunLink="https://github.com/iamwilllll/Taskodoro"
