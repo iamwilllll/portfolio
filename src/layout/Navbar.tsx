@@ -14,8 +14,8 @@ type navLinksType = {
 };
 
 const navLinks: navLinksType[] = [
-    { name: 'Home', href: '' },
-    { name: 'Projects', href: '' },
+    { name: 'Home', href: '#' },
+    { name: 'Projects', href: '#ProjectsSection' },
     { name: 'About Me', href: '' },
     { name: 'Contact Me', href: '' }
 ];
@@ -36,11 +36,19 @@ function Navbar() {
 
     return (
         <>
-            <button onClick={() => setIsActive(true)} className="text-second-font-color hover:cursor-pointer lg:hidden fixed z-1 top-5 right-5" aria-label="open navigation menu" title="Open menu">
+            <button
+                onClick={() => setIsActive(true)}
+                className="text-second-font-color hover:cursor-pointer lg:hidden fixed z-1 top-5 right-5"
+                aria-label="open navigation menu"
+                title="Open menu"
+            >
                 <MenuIcon />
             </button>
             <nav
-                className={`fixed left-0 w-full z-1 transition-all duration-500 bg-[#000000db] ${isActive ? 'h-screen top-0' : 'h-0 -top-50'} flex flex-col items-center justify-center gap-10 text-second-font-color lg:top-5 lg:left-1/2 lg:-translate-x-1/2 lg:h-15 lg:w-10/10 lg:max-w-[768px] lg:flex-row lg:rounded-full lg:px-10 lg:bg-nav-bg-color ${scrollY > 0 ? 'lg:scale-70 lg:opacity-70' : 'lg:scale-100 lg:opacity-100'}`}
+                className={`fixed left-0 w-full z-1 transition-all duration-500 bg-[#000000db] flex flex-col items-center justify-center gap-10 text-second-font-color lg:top-5 lg:left-1/2 lg:-translate-x-1/2 lg:h-15 lg:w-10/10 lg:max-w-[768px] lg:flex-row lg:rounded-full lg:px-10 lg:bg-nav-bg-color 
+                    ${isActive ? 'h-screen top-0' : 'h-0 -top-50'}
+                    ${scrollY > 0 ? 'lg:scale-70 lg:opacity-70' : 'lg:scale-100 lg:opacity-100'} lg:hover:scale-100 lg:hover:opacity-100
+                    `}
             >
                 <button
                     aria-label="close navigation menu"
@@ -52,7 +60,12 @@ function Navbar() {
                 </button>
 
                 {navLinks.map(item => (
-                    <a title={item.name} key={item.name} className="hover:text-first-font-color transition hover:underline text-2xl hover:scale-110 lg:text-lg hover:cursor-pointer uppercase">
+                    <a
+                        title={item.name}
+                        key={item.name}
+                        href={item.href}
+                        className="hover:text-first-font-color transition hover:underline text-2xl hover:scale-110 lg:text-lg hover:cursor-pointer uppercase"
+                    >
                         {item.name}
                     </a>
                 ))}
