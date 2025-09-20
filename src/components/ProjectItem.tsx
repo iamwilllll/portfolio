@@ -50,7 +50,12 @@ function ProjectItem({
                 <h3 className="text-3xl text-first-font-color font-bold md:text-center lg:text-left">{projectTitle}</h3>
                 <ul className="flex flex-wrap gap-3 md:justify-center w-full lg:justify-start">
                     {technologies.map((item, index) => (
-                        <TechnologiesItem key={index} label={item} item={item} />
+                        <TechnologiesItem
+                            key={index}
+                            label={item}
+                            item={item}
+                            className="max-w-40 w-full bg-second-bg-color hover:bg-third-bg-color gap-3"
+                        />
                     ))}
                 </ul>
                 <p className="text-xl text-first-font-color md:text-center lg:text-left">{projectDescription}</p>
