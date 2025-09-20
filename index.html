@@ -1,20 +1,26 @@
 <!doctype html>
-<html lang="en" class="bg-first-bg-color">
+<html lang="en" class="bg-first-bg-color scroll-smooth">
     <head>
         <meta charset="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- Import font Raleway and Nunito -->
+        <!-- Preload imagen principal para mejorar LCP -->
+        <link rel="preload" as="image" href="/avatar.webp" />
+
+        <!-- Preconnect y preload de fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-        <!-- Import font Raleway and Nunito-->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
 
         <title>Portfolio</title>
     </head>
     <body>
         <div id="root"></div>
-        <script type="module" src="/src/main.tsx"></script>
+        <!-- Diferir carga de JS para no bloquear render -->
+        <script type="module" src="/src/main.tsx" defer></script>
     </body>
 </html>

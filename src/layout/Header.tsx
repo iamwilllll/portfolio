@@ -18,21 +18,31 @@ function Header() {
     return (
         <Container className="flex flex-col lg:flex-row-reverse justify-center items-center">
             <figure className="w-11/12 lg:w-1/2 flex items-center justify-center">
-                <img src="./avatar.png" alt="Avatar image" className="mx-auto drop-shadow-[0px_0px_150px] drop-shadow-primary-color md:w-100 lg:w-full max-w-100" />
+                <img
+                    src="./avatar.webp"
+                    alt="Avatar image"
+                    width={400}
+                    height={400}
+                    className="mx-auto drop-shadow-[0px_0px_150px] drop-shadow-primary-color"
+                />
             </figure>
 
             <div className="flex flex-col items-center lg:items-start gap-15 lg:w-1/2">
                 <aside className="text-center">
-                    <h1 className="text-5xl font-semibold text-first-font-color lg:text-left lg:text-7xl mb-10">HI, i'm Wilfryn</h1>
+                    <h1 className="text-5xl font-semibold text-first-font-color lg:text-left lg:text-7xl mb-10">
+                        HI, i'm Wilfryn
+                    </h1>
                     <p className="text-third-font-color text-xl mt-0 font-light lg:text-left lg:text-xl lg:leading-10">
-                        As an learning <span className="font-bold text-first-font-color">Front-End Developer</span>, I combine technical skills with creativity to build functional and user-friendly
-                        applications. Beyond coding, I focus on clear communication and continuous learning to bring innovative ideas to life.
+                        As an learning <span className="font-bold text-first-font-color">Front-End Developer</span>, I combine
+                        technical skills with creativity to build functional and user-friendly applications. Beyond coding, I
+                        focus on clear communication and continuous learning to bring innovative ideas to life.
                     </p>
                 </aside>
 
                 <aside className="flex flex-col gap-2 lg:gap-5 md:flex-row">
-                    {linksList.map(item => (
+                    {linksList.map((item, index) => (
                         <a
+                            key={index}
                             href={item.href}
                             title={item.name}
                             target="_blank"
