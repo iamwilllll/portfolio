@@ -19,6 +19,7 @@ function Header() {
         <Container className="flex flex-col lg:flex-row-reverse justify-center items-center">
             <figure className="w-11/12 lg:w-1/2 flex items-center justify-center">
                 <img
+                    fetchPriority="high"
                     src="./avatar.webp"
                     alt="Avatar image"
                     width={400}
