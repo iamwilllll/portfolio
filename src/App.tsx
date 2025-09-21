@@ -7,7 +7,7 @@ import ContactMe from './layout/ContactMe';
 
 function App() {
     return (
-        <main className=" max-w-[2256px] font-first-font m-auto">
+        <main className="font-first-font m-auto max-w-[2256px]">
             <Navbar />
             <Header />
             <Projects />

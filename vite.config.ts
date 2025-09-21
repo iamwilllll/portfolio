@@ -10,11 +10,11 @@ export default defineConfig({
         minify: 'terser',
         terserOptions: {
             compress: {
-                drop_debugger: true
+                drop_debugger: true,
             },
             format: {
-                comments: false
-            }
-        }
-    }
+                comments: false,
+            },
+        },
+    },
 });

@@ -5,7 +5,7 @@ function Projects() {
     return (
         <Container className="pt-25" id="ProjectsSection">
             <h2 className="text-first-font-color text-4xl">Some of the projects i've done i did</h2>
-            <section className="flex flex-col gap-15 mt-10">
+            <section className="mt-10 flex flex-col gap-15">
                 <ProjectItem
                     projectTitle="Taskodoro"
                     projectDescription="Taskodoro is an interactive to-do list web app that lets you easily add, complete, and delete tasks. It includes a timer based on the Pomodoro Technique to improve time management."

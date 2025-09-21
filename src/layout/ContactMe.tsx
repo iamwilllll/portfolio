@@ -13,7 +13,7 @@ export default function ContactMe(): JSX.Element {
     const [form, setForm] = useState<FormState>({
         name: '',
         email: '',
-        message: ''
+        message: '',
     });
 
     const [errors, setErrors] = useState<FormErrors>({});
@@ -32,15 +32,16 @@ export default function ContactMe(): JSX.Element {
         }
 
         if (!values.message.trim()) errs.message = 'Message is required.';
-        else if (values.message.trim().length < 10) errs.message = 'Message must be at least 10 characters long.';
+        else if (values.message.trim().length < 10)
+            errs.message = 'Message must be at least 10 characters long.';
 
         return errs;
     };
 
     const handleChange = <K extends keyof FormState>(key: K, value: FormState[K]) => {
-        setForm(prev => ({ ...prev, [key]: value }));
+        setForm((prev) => ({ ...prev, [key]: value }));
 
-        setErrors(prev => {
+        setErrors((prev) => {
             const next = { ...prev };
             const single = validate({ ...form, [key]: value });
             if (single[key]) next[key] = single[key];
@@ -63,11 +64,11 @@ export default function ContactMe(): JSX.Element {
         await fetch(import.meta.env.VITE_SEND_FORM_URL, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify(form)
+            body: JSON.stringify(form),
         })
-            .then(res => {
+            .then((res) => {
                 if (!res.ok) throw new Error('Error sending message');
 
                 setSubmitting(false);
@@ -78,25 +79,31 @@ export default function ContactMe(): JSX.Element {
                     'Thank you very much for contacting me. I have received your message and will respond as soon as possible.'
                 );
             })
-            .catch(err => console.error(err));
+            .catch((err) => console.error(err));
     };
 
     return (
         <Container id="contactMe" className="flex items-center">
-            <div className="w-full mx-auto p-6 rounded-2xl shadow-lg border border-border-color text-first-font-color lg:w-6/10">
-                <h2 className="text-2xl font-semibold mb-4">Contact</h2>
-                <p className="text-sm mb-6">Fill out the form and I will get back to you as soon as possible.</p>
+            <div className="border-border-color text-first-font-color mx-auto w-full rounded-2xl border p-6 shadow-lg lg:w-6/10">
+                <h2 className="mb-4 text-2xl font-semibold">Contact</h2>
+                <p className="mb-6 text-sm">
+                    Fill out the form and I will get back to you as soon as possible.
+                </p>
 
-                {success && <div className="mb-4 p-3 rounded-lg border border-green-200 text-green-400">{success}</div>}
+                {success && (
+                    <div className="mb-4 rounded-lg border border-green-200 p-3 text-green-400">
+                        {success}
+                    </div>
+                )}
 
                 <form onSubmit={handleSubmit} noValidate>
-                    <label className="block mb-4">
+                    <label className="mb-4 block">
                         <span className="text-sm font-medium">Name</span>
                         <input
                             type="text"
                             value={form.name}
-                            onChange={e => handleChange('name', e.target.value)}
-                            className={`mt-1 block w-full rounded-lg border px-3 py-2 shadow-sm bg-transparent placeholder:opacity-60 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
+                            onChange={(e) => handleChange('name', e.target.value)}
+                            className={`mt-1 block w-full rounded-lg border bg-transparent px-3 py-2 shadow-sm placeholder:opacity-60 focus:ring-2 focus:ring-offset-1 focus:outline-none ${
                                 errors.name
                                     ? 'border-red-400 focus:ring-red-200'
                                     : 'border-border-color focus:border-primary-color'
@@ -111,13 +118,13 @@ export default function ContactMe(): JSX.Element {
                         )}
                     </label>
 
-                    <label className="block mb-4">
+                    <label className="mb-4 block">
                         <span className="text-sm font-medium">Email</span>
                         <input
                             type="email"
                             value={form.email}
-                            onChange={e => handleChange('email', e.target.value)}
-                            className={`mt-1 block w-full rounded-lg border px-3 py-2 shadow-sm bg-transparent placeholder:opacity-60 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
+                            onChange={(e) => handleChange('email', e.target.value)}
+                            className={`mt-1 block w-full rounded-lg border bg-transparent px-3 py-2 shadow-sm placeholder:opacity-60 focus:ring-2 focus:ring-offset-1 focus:outline-none ${
                                 errors.email
                                     ? 'border-red-400 focus:ring-red-200'
                                     : 'border-border-color focus:border-primary-color'
@@ -132,13 +139,13 @@ export default function ContactMe(): JSX.Element {
                         )}
                     </label>
 
-                    <label className="block mb-4">
+                    <label className="mb-4 block">
                         <span className="text-sm font-medium">Message</span>
                         <textarea
                             value={form.message}
-                            onChange={e => handleChange('message', e.target.value)}
+                            onChange={(e) => handleChange('message', e.target.value)}
                             rows={5}
-                            className={`mt-1 block w-full rounded-lg border px-3 py-2 shadow-sm bg-transparent placeholder:opacity-60 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
+                            className={`mt-1 block w-full rounded-lg border bg-transparent px-3 py-2 shadow-sm placeholder:opacity-60 focus:ring-2 focus:ring-offset-1 focus:outline-none ${
                                 errors.message
                                     ? 'border-red-400 focus:ring-red-200'
                                     : 'border-border-color focus:border-primary-color'
@@ -157,8 +164,7 @@ export default function ContactMe(): JSX.Element {
                         <button
                             type="submit"
                             disabled={submitting}
-                            className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-1 
-                                ${submitting ? 'bg-primary-color opacity-50 cursor-wait' : 'bg-primary-color hover:bg-primary-color hover:opacity-80 cursor-pointer'} text-first-font-color`}
+                            className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium shadow-sm focus:ring-2 focus:ring-offset-1 focus:outline-none ${submitting ? 'bg-primary-color cursor-wait opacity-50' : 'bg-primary-color hover:bg-primary-color cursor-pointer hover:opacity-80'} text-first-font-color`}
                         >
                             {submitting ? 'Sending...' : 'Send Message'}
                         </button>

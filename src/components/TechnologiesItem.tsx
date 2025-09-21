@@ -13,7 +13,7 @@ function TechnologiesItem({ item, label, className }: TechnologiesItemProps) {
 
     return (
         <li
-            className={`flex items-center justify-center h-10 rounded-full text-white font-second-font font-semibold transition ${className}`}
+            className={`font-second-font flex h-10 items-center justify-center rounded-full font-semibold text-white transition ${className}`}
         >
             <Icon className="size-6" />
             <p className="">{label}</p>

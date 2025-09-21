@@ -11,7 +11,7 @@ type socialLinksType = {
 function SocialLinks() {
     const socialLinks: socialLinksType[] = [
         { icon: <GitHubIcon />, href: 'https://github.com/iamwilllll' },
-        { icon: <LinkedinIcon />, href: 'https://www.linkedin.com/in/iamwilllll' }
+        { icon: <LinkedinIcon />, href: 'https://www.linkedin.com/in/iamwilllll' },
     ];
 
     return (
@@ -19,7 +19,7 @@ function SocialLinks() {
             {socialLinks.map((item, index) => (
                 <a
                     key={index}
-                    className="text-second-color hover:scale-125 transition hover:cursor-pointer hover:text-first-font-color"
+                    className="text-second-color hover:text-first-font-color transition hover:scale-125 hover:cursor-pointer"
                     title="icon"
                     href={item.href}
                     target="_blank"

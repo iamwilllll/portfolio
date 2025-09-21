@@ -25,7 +25,7 @@ const icons = {
     Git,
     Figma,
     Prettier,
-    NPM
+    NPM,
 };
 
 export default icons;

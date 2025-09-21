@@ -28,16 +28,16 @@ function ProjectItem({
     projectImage,
     AltProjectImage,
     gitHunLink,
-    previewLink
+    previewLink,
 }: ProjectItemProps) {
     const linksList: linksListType[] = [
         { name: 'GitHub', href: gitHunLink, icon: <GitHubIcon /> },
-        { name: 'Preview', href: previewLink, icon: <LinkIcon /> }
+        { name: 'Preview', href: previewLink, icon: <LinkIcon /> },
     ];
 
     return (
-        <aside className=" flex flex-col gap-5 lg:flex-row lg:justify-start">
-            <figure className="h-75 w-full rounded-[30px] overflow-hidden border-[0.1px] border-border-color md:min-w-125 md:max-w-125 md:items-center md:m-auto lg:items-start lg:mx-0">
+        <aside className="flex flex-col gap-5 lg:flex-row lg:justify-start">
+            <figure className="border-border-color h-75 w-full overflow-hidden rounded-[30px] border-[0.1px] md:m-auto md:max-w-125 md:min-w-125 md:items-center lg:mx-0 lg:items-start">
                 <img
                     src={projectImage}
                     alt={AltProjectImage}
@@ -46,26 +46,30 @@ function ProjectItem({
                 />
             </figure>
 
-            <div className="flex flex-col gap-5 w-full">
-                <h3 className="text-3xl text-first-font-color font-bold md:text-center lg:text-left">{projectTitle}</h3>
-                <ul className="flex flex-wrap gap-3 md:justify-center w-full lg:justify-start">
+            <div className="flex w-full flex-col gap-5">
+                <h3 className="text-first-font-color text-3xl font-bold md:text-center lg:text-left">
+                    {projectTitle}
+                </h3>
+                <ul className="flex w-full flex-wrap gap-3 md:justify-center lg:justify-start">
                     {technologies.map((item, index) => (
                         <TechnologiesItem
                             key={index}
                             label={item}
                             item={item}
-                            className="max-w-40 w-full bg-second-bg-color hover:bg-third-bg-color gap-3"
+                            className="bg-second-bg-color hover:bg-third-bg-color w-full max-w-40 gap-3"
                         />
                     ))}
                 </ul>
-                <p className="text-xl text-first-font-color md:text-center lg:text-left">{projectDescription}</p>
-                <div className="flex gap-3 mx-auto lg:m-0">
+                <p className="text-first-font-color text-xl md:text-center lg:text-left">
+                    {projectDescription}
+                </p>
+                <div className="mx-auto flex gap-3 lg:m-0">
                     {linksList.map((item, index) => (
                         <a
                             key={index}
                             href={item.href}
                             target="_blank"
-                            className="bg-third-bg-color w-35 h-10 rounded-full flex gap-2 items-center justify-center font-bold font-second-font text-first-font-color hover:scale-110 hover:bg-primary-color transition "
+                            className="bg-third-bg-color font-second-font text-first-font-color hover:bg-primary-color flex h-10 w-35 items-center justify-center gap-2 rounded-full font-bold transition hover:scale-110"
                         >
                             {item.icon}
                             {item.name}
