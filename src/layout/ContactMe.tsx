@@ -97,7 +97,9 @@ export default function ContactMe(): JSX.Element {
                             value={form.name}
                             onChange={e => handleChange('name', e.target.value)}
                             className={`mt-1 block w-full rounded-lg border px-3 py-2 shadow-sm bg-transparent placeholder:opacity-60 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
-                                errors.name ? 'border-red-400 focus:ring-red-200' : 'border-border-color focus:ring-indigo-200'
+                                errors.name
+                                    ? 'border-red-400 focus:ring-red-200'
+                                    : 'border-border-color focus:border-primary-color'
                             } text-first-font-color`}
                             aria-invalid={Boolean(errors.name)}
                             aria-describedby={errors.name ? 'name-error' : undefined}
@@ -116,7 +118,9 @@ export default function ContactMe(): JSX.Element {
                             value={form.email}
                             onChange={e => handleChange('email', e.target.value)}
                             className={`mt-1 block w-full rounded-lg border px-3 py-2 shadow-sm bg-transparent placeholder:opacity-60 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
-                                errors.email ? 'border-red-400 focus:ring-red-200' : 'border-border-color focus:ring-indigo-200'
+                                errors.email
+                                    ? 'border-red-400 focus:ring-red-200'
+                                    : 'border-border-color focus:border-primary-color'
                             } text-first-font-color`}
                             aria-invalid={Boolean(errors.email)}
                             aria-describedby={errors.email ? 'email-error' : undefined}
@@ -135,7 +139,9 @@ export default function ContactMe(): JSX.Element {
                             onChange={e => handleChange('message', e.target.value)}
                             rows={5}
                             className={`mt-1 block w-full rounded-lg border px-3 py-2 shadow-sm bg-transparent placeholder:opacity-60 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
-                                errors.message ? 'border-red-400 focus:ring-red-200' : 'border-border-color focus:ring-indigo-200'
+                                errors.message
+                                    ? 'border-red-400 focus:ring-red-200'
+                                    : 'border-border-color focus:border-primary-color'
                             } text-first-font-color`}
                             aria-invalid={Boolean(errors.message)}
                             aria-describedby={errors.message ? 'message-error' : undefined}
@@ -151,9 +157,8 @@ export default function ContactMe(): JSX.Element {
                         <button
                             type="submit"
                             disabled={submitting}
-                            className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-1 ${
-                                submitting ? 'bg-indigo-300 cursor-wait' : 'bg-indigo-600 hover:bg-indigo-700'
-                            } text-first-font-color`}
+                            className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-1 
+                                ${submitting ? 'bg-primary-color opacity-50 cursor-wait' : 'bg-primary-color hover:bg-primary-color hover:opacity-80 cursor-pointer'} text-first-font-color`}
                         >
                             {submitting ? 'Sending...' : 'Send Message'}
                         </button>
