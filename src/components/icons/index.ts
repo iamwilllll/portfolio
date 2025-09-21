@@ -10,6 +10,7 @@ import { VSCode } from './VSCode';
 import { Git } from './Git';
 import { Figma } from './Figma';
 import { Prettier } from './Prettier';
+import { NPM } from './NPM';
 
 const icons = {
     JavaScript,
@@ -23,7 +24,8 @@ const icons = {
     VSCode,
     Git,
     Figma,
-    Prettier
+    Prettier,
+    NPM
 };
 
 export default icons;

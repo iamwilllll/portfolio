@@ -3,7 +3,7 @@ import TechnologiesItem from '../components/TechnologiesItem';
 
 const languages: string[] = ['JavaScript', 'TypeScript'];
 const technologies: string[] = ['HTML', 'CSS', 'Sass', 'React', 'Tailwind'];
-const skills: string[] = ['VSCode', 'Git', 'GitHub', 'Figma', 'Prettier'];
+const skills: string[] = ['VSCode','NPM', 'Git', 'GitHub', 'Figma', 'Prettier'];
 
 function Technologies() {
     return (
