@@ -51,19 +51,34 @@ export default function ContactMe(): JSX.Element {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setSuccess(null);
 
         const validation = validate(form);
-        setErrors(validation);
 
         if (Object.keys(validation).length) return;
 
+        setErrors(validation);
+        setSuccess(null);
         setSubmitting(true);
-        console.log(form);
-        setSubmitting(false);
-        setSuccess('asd');
 
-        setTimeout(() => setSuccess(null), 3000);
+        await fetch(import.meta.env.VITE_SEND_FORM_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(form)
+        })
+            .then(res => {
+                if (!res.ok) throw new Error('Error sending message');
+
+                setSubmitting(false);
+
+                setForm({ name: '', email: '', message: '' });
+
+                setSuccess(
+                    'Thank you very much for contacting me. I have received your message and will respond as soon as possible.'
+                );
+            })
+            .catch(err => console.error(err));
     };
 
     return (
