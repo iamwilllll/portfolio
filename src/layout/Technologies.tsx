@@ -12,8 +12,8 @@ function Technologies() {
                 These are the technologies I’ve been using
             </h2>
 
-            <section className="mt-10 flex flex-col items-start justify-center gap-5 lg:flex-row">
-                <aside className="border-border-color flex w-full max-w-100 flex-col gap-2 rounded-xl border p-10">
+            <section className="mt-10 flex flex-col items-center justify-center gap-5 lg:flex-row lg:items-start">
+                <aside className="border-border-color flex w-full max-w-100 flex-col flex-wrap gap-2 rounded-xl border p-10">
                     {technologies.map((item, index) => (
                         <div
                             key={index}
