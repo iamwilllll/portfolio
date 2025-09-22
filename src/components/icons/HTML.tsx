@@ -2,17 +2,8 @@ import type { SVGProps } from 'react';
 
 export function HTML(props: SVGProps<SVGSVGElement>) {
     return (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            viewBox="0 0 128 128"
-            {...props}
-        >
-            <path
-                fill="#E44D26"
-                d="M19.037 113.876L9.032 1.661h109.936l-10.016 112.198l-45.019 12.48z"
-            />
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 128 128" {...props}>
+            <path fill="#E44D26" d="M19.037 113.876L9.032 1.661h109.936l-10.016 112.198l-45.019 12.48z" />
             <path fill="#F16529" d="m64 116.8l36.378-10.086l8.559-95.878H64z" />
             <path
                 fill="#EBEBEB"

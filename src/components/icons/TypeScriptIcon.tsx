@@ -2,13 +2,7 @@ import type { SVGProps } from 'react';
 
 export function TypeScript(props: SVGProps<SVGSVGElement>) {
     return (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="128"
-            height="128"
-            viewBox="0 0 128 128"
-            {...props}
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" {...props}>
             <path fill="#fff" d="M22.67 47h99.67v73.67H22.67z" />
             <path
                 fill="#007acc"

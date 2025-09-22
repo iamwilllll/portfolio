@@ -47,9 +47,7 @@ function ProjectItem({
             </figure>
 
             <div className="flex w-full flex-col gap-5">
-                <h3 className="text-first-font-color text-3xl font-bold md:text-center lg:text-left">
-                    {projectTitle}
-                </h3>
+                <h3 className="text-first-font-color text-3xl font-bold md:text-center lg:text-left">{projectTitle}</h3>
                 <ul className="flex w-full flex-wrap gap-3 md:justify-center lg:justify-start">
                     {technologies.map((item, index) => (
                         <TechnologiesItem
@@ -60,9 +58,7 @@ function ProjectItem({
                         />
                     ))}
                 </ul>
-                <p className="text-first-font-color text-xl md:text-center lg:text-left">
-                    {projectDescription}
-                </p>
+                <p className="text-first-font-color text-xl md:text-center lg:text-left">{projectDescription}</p>
                 <div className="mx-auto flex gap-3 lg:m-0">
                     {linksList.map((item, index) => (
                         <a

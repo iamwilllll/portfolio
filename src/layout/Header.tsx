@@ -41,11 +41,9 @@ function Header() {
                         HI, i'm Wilfryn
                     </h1>
                     <p className="text-third-font-color mt-0 text-xl font-light lg:text-left lg:text-xl lg:leading-10">
-                        As an learning{' '}
-                        <span className="text-first-font-color font-bold">Front-End Developer</span>
-                        , I combine technical skills with creativity to build functional and
-                        user-friendly applications. Beyond coding, I focus on clear communication
-                        and continuous learning to bring innovative ideas to life.
+                        As an learning <span className="text-first-font-color font-bold">Front-End Developer</span>, I combine
+                        technical skills with creativity to build functional and user-friendly applications. Beyond coding, I
+                        focus on clear communication and continuous learning to bring innovative ideas to life.
                     </p>
                 </aside>
 

@@ -2,13 +2,7 @@ import type { SVGProps } from 'react';
 
 export function React(props: SVGProps<SVGSVGElement>) {
     return (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="128"
-            height="128"
-            viewBox="0 0 32 32"
-            {...props}
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 32 32" {...props}>
             <path
                 fill="#00bcd4"
                 d="M16 12c7.444 0 12 2.59 12 4s-4.556 4-12 4s-12-2.59-12-4s4.556-4 12-4m0-2c-7.732 0-14 2.686-14 6s6.268 6 14 6s14-2.686 14-6s-6.268-6-14-6"
