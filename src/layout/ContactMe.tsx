@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import Container from '../components/Container';
-import ErrroItem from '../components/ErrroItem';
+import ErrorItem from '../components/ErrorItem';
 
 type FormDataT = {
     name: string;
@@ -63,7 +63,7 @@ function ContactMe() {
                             {...register('name', { required: 'This field is required' })}
                         />
 
-                        {errors.name && <ErrroItem>{errors.name.message}</ErrroItem>}
+                        {errors.name && <ErrorItem>{errors.name.message}</ErrorItem>}
                     </label>
 
                     <label className="mb-4 block">
@@ -73,12 +73,12 @@ function ContactMe() {
                             type="email"
                             className={`mt-1 block w-full rounded-lg border bg-transparent px-3 py-2 shadow-sm placeholder:opacity-60 focus:ring-2 focus:ring-offset-1 focus:outline-none ${errors.email ? 'border-red-400 focus:ring-red-200' : 'border-border-color focus:border-primary-color'} text-first-font-color`}
                             {...register('email', {
-                                required: 'This fueld is required',
+                                required: 'This field is required',
                                 pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: 'Invalid Email' },
                             })}
                         />
 
-                        {errors.email && <ErrroItem>{errors.email.message}</ErrroItem>}
+                        {errors.email && <ErrorItem>{errors.email.message}</ErrorItem>}
                     </label>
 
                     <label className="mb-4 block">
@@ -89,7 +89,7 @@ function ContactMe() {
                             className={`mt-1 block w-full rounded-lg border bg-transparent px-3 py-2 shadow-sm placeholder:opacity-60 focus:ring-2 focus:ring-offset-1 focus:outline-none ${errors.information ? 'border-red-400 focus:ring-red-200' : 'border-border-color focus:border-primary-color'} text-first-font-color`}
                             {...register('information', { required: 'This field is required' })}
                         />
-                        {errors.information && <ErrroItem>{errors.information.message}</ErrroItem>}
+                        {errors.information && <ErrorItem>{errors.information.message}</ErrorItem>}
                     </label>
 
                     <div className="flex items-center justify-start">
