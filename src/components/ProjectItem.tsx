@@ -5,14 +5,10 @@ import TechnologiesItem from './TechnologiesItem';
 import { GitHubIcon } from './icons/GitHubIcon';
 import { LinkIcon } from './icons/LinkIcon';
 
+import type { ProjectT } from '../hooks/useProjects';
+
 type ProjectItemProps = {
-    projectTitle: string;
-    projectDescription: string;
-    projectImage: string;
-    AltProjectImage: string;
-    technologies: string[];
-    gitHunLink: string;
-    previewLink: string;
+    project: ProjectT;
 };
 
 type linksListType = {
@@ -21,17 +17,11 @@ type linksListType = {
     icon: ReactNode;
 };
 
-function ProjectItem({
-    projectTitle,
-    projectDescription,
-    technologies,
-    projectImage,
-    AltProjectImage,
-    gitHunLink,
-    previewLink,
-}: ProjectItemProps) {
+function ProjectItem({ project }: ProjectItemProps) {
+    const { technologies, description, title, projectHoverUrl, gitHubLink, previewLink } = project;
+
     const linksList: linksListType[] = [
-        { name: 'GitHub', href: gitHunLink, icon: <GitHubIcon /> },
+        { name: 'GitHub', href: gitHubLink, icon: <GitHubIcon /> },
         { name: 'Preview', href: previewLink, icon: <LinkIcon /> },
     ];
 
@@ -39,26 +29,26 @@ function ProjectItem({
         <aside className="flex flex-col gap-5 lg:flex-row lg:justify-start">
             <figure className="border-border-color h-75 w-full overflow-hidden rounded-[30px] border-[0.1px] md:m-auto md:max-w-125 md:min-w-125 md:items-center lg:mx-0 lg:items-start">
                 <img
-                    src={projectImage}
-                    alt={AltProjectImage}
+                    src={projectHoverUrl}
+                    alt="project hover"
                     loading="lazy"
-                    className="h-15/10 w-15/10 object-cover object-left-top transition-transform duration-500 hover:scale-125"
+                    className="h-15/10 w-15/10 object-cover transition-transform duration-500 hover:scale-125"
                 />
             </figure>
 
             <div className="flex w-full flex-col gap-5">
-                <h3 className="text-first-font-color text-3xl font-bold md:text-center lg:text-left">{projectTitle}</h3>
+                <h3 className="text-first-font-color text-3xl font-bold md:text-center lg:text-left">{title}</h3>
                 <ul className="flex w-full flex-wrap gap-3 md:justify-center lg:justify-start">
                     {technologies.map((item, index) => (
                         <TechnologiesItem
                             key={index}
-                            label={item}
-                            item={item}
+                            label={item.name}
+                            src={item.icon}
                             className="bg-second-bg-color hover:bg-third-bg-color w-full max-w-40 gap-3"
                         />
                     ))}
                 </ul>
-                <p className="text-first-font-color text-xl md:text-center lg:text-left">{projectDescription}</p>
+                <p className="text-first-font-color text-xl md:text-center lg:text-left">{description}</p>
                 <div className="mx-auto flex gap-3 lg:m-0">
                     {linksList.map((item, index) => (
                         <a
