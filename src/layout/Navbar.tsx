@@ -45,7 +45,10 @@ function Navbar() {
                 <MenuIcon />
             </button>
             <nav
-                className={`text-second-font-color lg:bg-nav-bg-color fixed left-0 z-1 flex w-full flex-col items-center justify-center gap-10 bg-[#000000db] transition-all duration-500 lg:top-5 lg:left-1/2 lg:h-15 lg:w-10/10 lg:-translate-x-1/2 lg:flex-row lg:rounded-full lg:px-10 ${isActive ? 'top-0 h-screen' : '-top-50 h-0'} ${scrollY > 0 ? 'lg:scale-70 lg:opacity-70' : 'lg:scale-100 lg:opacity-100'} lg:hover:scale-100 lg:hover:opacity-100`}
+                className={
+                    'text-second-font-color lg:bg-nav-bg-color fixed left-0 z-1 flex w-full flex-col items-center justify-center gap-10 bg-[#000000db] transition-all duration-500 lg:top-5 lg:left-1/2 lg:h-15 lg:w-10/10 lg:max-w-180 lg:-translate-x-1/2 lg:flex-row lg:rounded-full lg:px-10 lg:hover:scale-100 lg:hover:opacity-100' +
+                    ` ${isActive ? 'top-0 h-screen' : '-top-100 h-0'} ${scrollY > 0 ? 'lg:scale-70 lg:opacity-70' : 'lg:scale-100 lg:opacity-100'} `
+                }
             >
                 <button
                     aria-label="close navigation menu"
