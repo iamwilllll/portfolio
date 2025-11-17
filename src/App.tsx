@@ -4,9 +4,10 @@ import Header from './layout/Header';
 import Projects from './layout/Projects';
 import Technologies from './layout/Technologies';
 import ContactMe from './layout/ContactMe';
+import { useContext } from './context/store';
 
 function App() {
-    const isLoading = false;
+    const { isLoading } = useContext();
 
     return (
         <main className="font-first-font m-auto max-w-[2256px]">
