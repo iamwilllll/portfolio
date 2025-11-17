@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import Container from '../components/Container';
 
 import { LinkedinIcon } from '../components/icons/LinkedinIcon';
+import { DocIcon } from '../components/icons/DocIcon';
 
 type linksListType = {
     href: string;
@@ -15,6 +16,7 @@ function Header() {
         {
             name: 'CV',
             href: 'https://docs.google.com/document/d/1m6El1D5_eSy4y-9MZOJ49R9_RGsTCesycKU_e96cg2A/edit?usp=sharing',
+            icon: <DocIcon />,
         },
         {
             name: 'Linkedin',
@@ -41,7 +43,7 @@ function Header() {
                         HI, i'm Wilfryn
                     </h1>
                     <p className="text-third-font-color mt-0 text-xl font-light lg:text-left lg:text-xl lg:leading-10">
-                        As an learning <span className="text-first-font-color font-bold">Front-End Developer</span>, I combine
+                        As an learning <span className="text-first-font-color font-bold">full-stack Developer</span>, I combine
                         technical skills with creativity to build functional and user-friendly applications. Beyond coding, I
                         focus on clear communication and continuous learning to bring innovative ideas to life.
                     </p>
@@ -54,7 +56,7 @@ function Header() {
                             href={item.href}
                             title={item.name}
                             target="_blank"
-                            className="font-second-font hover:bg-primary-color flex h-12 w-55 cursor-pointer items-center justify-center gap-1 rounded-full bg-white text-xl font-semibold text-black transition hover:scale-110 hover:text-white"
+                            className="font-second-font hover:bg-primary-color focus:bg-primary-color flex h-12 w-55 cursor-pointer items-center justify-center gap-1 rounded-full bg-white text-xl font-semibold text-black transition hover:scale-110 hover:text-white focus:scale-110 focus:text-white"
                         >
                             {item.icon}
                             {item.name}
