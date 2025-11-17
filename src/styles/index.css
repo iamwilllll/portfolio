@@ -13,6 +13,8 @@
     --second-font-color: #b292ff;
     --third-font-color: #c1c1c1;
     --border-color: #303030;
+
+    --modal-bg-color: #00000080;
 }
 
 @theme {
@@ -28,4 +30,62 @@
     --color-second-font-color: var(--second-font-color);
     --color-third-font-color: var(--third-font-color);
     --color-border-color: var(--border-color);
+    --color-modal-bg-color: var(--modal-bg-color);
+}
+
+.loader {
+    width: 40px;
+    aspect-ratio: 1;
+    position: relative;
+    margin: auto;
+}
+
+.loader:before,
+.loader:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: -8px 0 0 -8px;
+    width: 16px;
+    aspect-ratio: 1;
+    background: var(--primary-color);
+    animation:
+        l2-1 2s infinite,
+        l2-2 1s infinite;
+}
+.loader:after {
+    background: white;
+    animation-delay: -1s, 0s;
+}
+@keyframes l2-1 {
+    0% {
+        top: 0;
+        left: 0;
+    }
+    25% {
+        top: 100%;
+        left: 0;
+    }
+    50% {
+        top: 100%;
+        left: 100%;
+    }
+    75% {
+        top: 0;
+        left: 100%;
+    }
+    100% {
+        top: 0;
+        left: 0;
+    }
+}
+@keyframes l2-2 {
+    40%,
+    50% {
+        transform: rotate(0.25turn) scale(0.5);
+    }
+    100% {
+        transform: rotate(0.5turn) scale(1);
+    }
 }

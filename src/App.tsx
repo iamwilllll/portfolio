@@ -6,8 +6,14 @@ import Technologies from './layout/Technologies';
 import ContactMe from './layout/ContactMe';
 
 function App() {
+    const isLoading = false;
+
     return (
         <main className="font-first-font m-auto max-w-[2256px]">
+            <div className={`${isLoading ? 'bg-modal-bg-color fixed z-2 flex size-full' : 'hidden'}`}>
+                <div className="loader"></div>
+            </div>
+
             <Navbar />
             <Header />
             <Projects />
