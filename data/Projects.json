@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "title": "TaskPodoro",
+        "description": "TaskPodoro is an interactive to-do list web app that lets you easily add, complete, and delete tasks. It includes a timer based on the Pomodoro Technique to improve time management.",
+        "projectHoverUrl": "/data/assets/taskpodoro.png",
+        "technologies": [
+            {
+                "name": "JavaScript",
+                "icon": "/data/assets/icons/javascript.svg"
+            },
+            {
+                "name": "React",
+                "icon": "/data/assets/icons/react.svg"
+            },
+            {
+                "name": "Tailwind",
+                "icon": "/data/assets/icons/tailwind.svg"
+            }
+        ],
+        "gitHubLink": "https://github.com/iamwilllll/TaskPodoro",
+        "previewLink": "https://iamwilllll.github.io/TaskPodoro"
+    }
+]

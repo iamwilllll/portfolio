@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "title": "frontend",
+        "technologies": [
+            { "name": "HTML", "icon": "/data/assets/icons/html.svg" },
+            { "name": "CSS", "icon": "/data/assets/icons/css.svg" },
+            { "name": "JavaScript", "icon": "/data/assets/icons/javascript.svg" },
+            { "name": "TypeScript", "icon": "/data/assets/icons/typescript.svg" },
+            { "name": "Sass", "icon": "/data/assets/icons/sass.svg" },
+            { "name": "React", "icon": "/data/assets/icons/react.svg" },
+            { "name": "Tailwind", "icon": "/data/assets/icons/tailwind.svg" }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "backend",
+        "technologies": [
+            { "name": "Node", "icon": "/data/assets/icons/node.svg" },
+            { "name": "Express", "icon": "/data/assets/icons/express.svg" },
+            { "name": "TsNode", "icon": "/data/assets/icons/tsnode.svg" },
+            { "name": "MongoDB", "icon": "/data/assets/icons/mongodb.svg" },
+            { "name": "Postman", "icon": "/data/assets/icons/postman.svg" }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "technologies",
+        "technologies": [
+            { "name": "VSCode", "icon": "/data/assets/icons/vscode.svg" },
+            { "name": "Git", "icon": "/data/assets/icons/git.svg" },
+            { "name": "GitHub", "icon": "/data/assets/icons/github.svg" },
+            { "name": "Prettier", "icon": "/data/assets/icons/prettier.svg" },
+            { "name": "Figma", "icon": "/data/assets/icons/figma.svg" },
+            { "name": "NPM", "icon": "/data/assets/icons/npm.svg" },
+            { "name": "PNPM", "icon": "/data/assets/icons/pnpm.svg" },
+            { "name": "Zustand", "icon": "/data/assets/icons/zustand.svg" },
+            { "name": "Axios", "icon": "/data/assets/icons/axios.svg" },
+            { "name": "Zod", "icon": "/data/assets/icons/zod.svg" }
+        ]
+    }
+]
