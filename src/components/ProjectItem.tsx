@@ -4,8 +4,8 @@ import TechnologiesItem from './TechnologiesItem';
 
 import { GitHubIcon } from './icons/GitHubIcon';
 import { LinkIcon } from './icons/LinkIcon';
+import type { ProjectT } from '../types/projects.types';
 
-import type { ProjectT } from '../hooks/useProjects';
 
 type ProjectItemProps = {
     project: ProjectT;
