@@ -1,10 +1,14 @@
 import { create } from 'zustand';
+import type { useFormSuccessProps, useStoreProps } from '../types';
 
-type useStoreProps = {
-    isLoading: boolean;
-    toggleLoading: (state: boolean) => void;
-};
 export const useContext = create<useStoreProps>((set) => ({
     isLoading: false,
-    toggleLoading: (state) => set(() => ({ isLoading: state })),
+    toggleLoading: (newState) => set(() => ({ isLoading: newState })),
+}));
+
+export const useFormSuccess = create<useFormSuccessProps>((set) => ({
+    isSuccess: false,
+    wasMistake: false,
+    toggleSuccess: (newState) => set(() => ({ isSuccess: newState })),
+    toggleMistakes: (newState) => set(() => ({ wasMistake: newState })),
 }));
