@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://iamwil.me/sitemap.xml
+Sitemap: https://iamwil.dev/sitemap.xml

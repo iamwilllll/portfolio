@@ -5,19 +5,16 @@ import { GitHubIcon } from './icons/GitHubIcon';
 import { LinkedinIcon } from './icons/LinkedinIcon';
 import { DocIcon } from './icons/DocIcon';
 
-
-
 type SocialLinksProps = {
     className?: string;
 };
-
 
 type SocialLinksType = {
     icon: ReactNode;
     href: string;
 };
 
-function SocialLinks({className}:SocialLinksProps) {
+function SocialLinks({ className }: SocialLinksProps) {
     const socialLinks: SocialLinksType[] = [
         { icon: <GitHubIcon />, href: 'https://github.com/iamwilllll' },
         { icon: <LinkedinIcon />, href: 'https://www.linkedin.com/in/iamwilllll' },

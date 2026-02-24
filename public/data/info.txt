@@ -1,1 +1,0 @@
-In this project, this folder exists because what I did was simulate HTTP requests with Axios to a backend

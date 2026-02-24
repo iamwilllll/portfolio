@@ -6,7 +6,6 @@ import { GitHubIcon } from './icons/GitHubIcon';
 import { LinkIcon } from './icons/LinkIcon';
 import type { ProjectT } from '../types/projects.types';
 
-
 type ProjectItemProps = {
     project: ProjectT;
 };
