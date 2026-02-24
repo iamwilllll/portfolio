@@ -20,6 +20,10 @@ function App() {
             <Projects />
             <Technologies />
             <ContactMe />
+
+            <footer className="my-5 w-full text-center text-white">
+                © 2026 Portfolio — Developed by Wilfryn Viloria Rosario
+            </footer>
         </main>
     );
 }
