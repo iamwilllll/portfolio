@@ -1,24 +1,29 @@
 [
     {
         "id": 1,
-        "title": "TaskPodoro",
-        "description": "TaskPodoro is an interactive to-do list web app that lets you easily add, complete, and delete tasks. It includes a timer based on the Pomodoro Technique to improve time management.",
-        "projectHoverUrl": "/data/assets/taskpodoro.png",
+        "title": "App api documentation",
+        "description": "About Interactive documentation frontend for an authentication API, built in React + TypeScript + Vite, featuring endpoints with dynamic and navigable schemas to make it easy for developers to use.",
+        "projectHoverUrl": "/data/assets/projects/apiDocumentation.png",
         "technologies": [
-            {
-                "name": "JavaScript",
-                "icon": "/data/assets/icons/javascript.svg"
-            },
-            {
-                "name": "React",
-                "icon": "/data/assets/icons/react.svg"
-            },
-            {
-                "name": "Tailwind",
-                "icon": "/data/assets/icons/tailwind.svg"
-            }
+            { "name": "React", "icon": "/data/assets/icons/react.svg" },
+            { "name": "TypeScript", "icon": "/data/assets/icons/typescript.svg" },
+            { "name": "Tailwind", "icon": "/data/assets/icons/tailwind.svg" }
         ],
-        "gitHubLink": "https://github.com/iamwilllll/TaskPodoro",
-        "previewLink": "https://iamwilllll.github.io/TaskPodoro"
+        "gitHubLink": "https://github.com/iamwilllll/api_cocumentation",
+        "previewLink": "https://api-cocumentation-demo.vercel.app/"
+    },
+    {
+        "id": 2,
+        "title": "Auth REST API",
+        "description": "This REST API provides a complete authentication and authorization system based on JWT (JSON Web Tokens). It is designed for modern web applications and supports secure session management, access control, and password recovery.",
+        "projectHoverUrl": "/data/assets/projects/restApi.png",
+        "technologies": [
+            { "name": "Node", "icon": "/data/assets/icons/node.svg" },
+            { "name": "TypeScript", "icon": "/data/assets/icons/typescript.svg" },
+            { "name": "Express", "icon": "/data/assets/icons/express.svg" },
+            { "name": "MongoDB", "icon": "/data/assets/icons/mongodb.svg" }
+        ],
+        "gitHubLink": "https://github.com/iamwilllll/auth_api_rest",
+        "previewLink": "https://auth-api-rest-demo.onrender.com"
     }
 ]
