@@ -48,7 +48,7 @@ function ProjectItem({ project }: ProjectItemProps) {
                     ))}
                 </ul>
                 <p className="text-first-font-color text-xl md:text-center lg:text-left">{description}</p>
-                <div className="mx-auto flex gap-3 lg:m-0">
+                <div className="mx-auto flex flex-wrap items-center justify-center gap-3 lg:m-0 lg:justify-start">
                     {linksList.map((item, index) => (
                         <a
                             key={index}
