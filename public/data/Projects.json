@@ -1,9 +1,9 @@
 [
     {
         "id": 1,
-        "title": "Docicfy API Documentation",
+        "title": "Docify API Documentation",
         "description": "A minimal and powerful Express middleware for automatically generating and serving API documentation with zero configuration.",
-        "projectHoverUrl": "/data/assets/projects/docifyApi.png",
+        "projectHoverUrl": "/data/assets/projects/docifyAPI.png",
         "technologies": [
             { "name": "Node", "icon": "/data/assets/icons/node.svg" },
             { "name": "TypeScript", "icon": "/data/assets/icons/typescript.svg" },
@@ -12,8 +12,8 @@
             { "name": "React", "icon": "/data/assets/icons/react.svg" },
             { "name": "Tailwind", "icon": "/data/assets/icons/tailwind.svg" }
         ],
-        "gitHubLink": "https://github.com/iamwilllll/api-documentation",
-        "previewLink": "https://github.com/iamwilllll/DocifyAPI"
+        "gitHubLink": "https://github.com/iamwilllll/DocifyAPI",
+        "previewLink": "https://www.npmjs.com/package/docify-api"
     },
     {
         "id": 2,
