@@ -1,19 +1,11 @@
-/* Import states */
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 
-/* Import icons .tsx */
 import { MenuIcon } from '../components/icons/MenuIcon';
 import { CloseIcon } from '../components/icons/CloseIcon';
-
-/* Import components */
 import SocialLinks from '../components/SocialLinks';
 
-type navLinksType = {
-    name: string;
-    href: string;
-};
-
-const navLinks: navLinksType[] = [
+const navLinks: { name: string; href: string }[] = [
     { name: 'Home', href: '#' },
     { name: 'Projects', href: '#ProjectsSection' },
     { name: 'Skills', href: '#technologies' },
@@ -22,14 +14,20 @@ const navLinks: navLinksType[] = [
 
 function Navbar() {
     const [isActive, setIsActive] = useState(false);
+    const [isNavBarIsVisible, setIsNavBarIsVisible] = useState(true);
+    const lastScrollY = useRef(0);
 
-    const [scrollY, setScrollY] = useState(0);
+    const handleScroll = () => {
+        if (window.scrollY < lastScrollY.current) {
+            setIsNavBarIsVisible(true);
+        } else {
+            setIsNavBarIsVisible(false);
+        }
+
+        lastScrollY.current = window.scrollY;
+    };
 
     useEffect(() => {
-        const handleScroll = () => {
-            setScrollY(window.scrollY);
-        };
-
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
@@ -38,40 +36,75 @@ function Navbar() {
         <>
             <button
                 onClick={() => setIsActive(true)}
-                className="text-second-font-color fixed top-5 right-5 z-1 hover:cursor-pointer lg:hidden"
                 aria-label="open navigation menu"
                 title="Open menu"
+                className="text-second-font-color border-first-font-color/30 bg-nav-bg-color/40 hover:bg-nav-bg-color/60 fixed top-5 right-5 z-20 rounded-full border p-2 backdrop-blur-md transition lg:hidden"
             >
                 <MenuIcon />
             </button>
-            <nav
-                className={
-                    'text-second-font-color lg:bg-nav-bg-color fixed left-0 z-1 flex w-full flex-col items-center justify-center gap-10 bg-[#000000db] transition-all duration-500 lg:top-5 lg:left-1/2 lg:h-15 lg:w-10/10 lg:max-w-180 lg:-translate-x-1/2 lg:flex-row lg:rounded-full lg:px-10 lg:hover:scale-100 lg:hover:opacity-100' +
-                    ` ${isActive ? 'top-0 h-screen' : '-top-100 h-0'} ${scrollY > 0 ? 'lg:scale-70 lg:opacity-70' : 'lg:scale-100 lg:opacity-100'} `
-                }
-            >
-                <button
-                    aria-label="close navigation menu"
-                    title="Close menu"
-                    onClick={() => setIsActive(false)}
-                    className="text-second-font-color hover:text-first-font-color transition-colors hover:cursor-pointer lg:hidden"
-                >
-                    <CloseIcon />
-                </button>
 
-                {navLinks.map((item) => (
-                    <a
-                        title={item.name}
-                        key={item.name}
-                        href={item.href}
-                        className="hover:text-first-font-color text-2xl uppercase transition hover:scale-110 hover:cursor-pointer hover:underline lg:text-lg"
+            <AnimatePresence>
+                {isActive && (
+                    <motion.nav
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="text-second-font-color fixed inset-0 z-20 flex flex-col items-center justify-center gap-10 bg-black/80 backdrop-blur-xl"
                     >
-                        {item.name}
-                    </a>
-                ))}
+                        <button
+                            onClick={() => setIsActive(false)}
+                            className="border-first-font-color/30 bg-nav-bg-color/40 hover:bg-nav-bg-color/60 absolute top-5 right-5 rounded-full border p-2 transition"
+                        >
+                            <CloseIcon />
+                        </button>
 
-                <SocialLinks />
-            </nav>
+                        {navLinks.map((item, i) => (
+                            <motion.a
+                                key={item.name}
+                                href={item.href}
+                                title={item.name}
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: i * 0.08 }}
+                                onClick={() => setIsActive(false)}
+                                className="hover:text-first-font-color text-3xl tracking-wide uppercase transition-all hover:tracking-widest"
+                            >
+                                {item.name}
+                            </motion.a>
+                        ))}
+
+                        <SocialLinks />
+                    </motion.nav>
+                )}
+            </AnimatePresence>
+
+            <motion.nav
+                animate={{
+                    scale: isNavBarIsVisible ? 1 : 0.9,
+                    y: isNavBarIsVisible ? 0 : -100,
+                    opacity: isNavBarIsVisible ? 1 : 0,
+                }}
+                transition={{ duration: 0.3 }}
+                className="text-second-font-color fixed top-5 left-1/2 z-20 hidden -translate-x-1/2 lg:flex"
+            >
+                <div className="bg-nav-bg-color/40 flex items-center gap-8 rounded-full border border-white/10 px-8 py-3 shadow-lg backdrop-blur-xl">
+                    {navLinks.map((item) => (
+                        <a
+                            key={item.name}
+                            href={item.href}
+                            title={item.name}
+                            className="group relative text-sm tracking-wide uppercase transition"
+                        >
+                            <span className="group-hover:text-first-font-color relative transition">{item.name}</span>
+                            <span className="bg-first-font-color absolute -bottom-1 left-1/2 h-0.5 w-0 -translate-x-1/2 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                    ))}
+
+                    <div className="ml-2">
+                        <SocialLinks />
+                    </div>
+                </div>
+            </motion.nav>
         </>
     );
 }

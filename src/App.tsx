@@ -21,7 +21,7 @@ function App() {
             <Technologies />
             <ContactMe />
 
-            <footer className="my-5 w-full text-center px-20 text-white">
+            <footer className="my-5 w-full px-20 text-center text-white">
                 © 2026 Portfolio — Developed by Wilfryn Viloria Rosario
             </footer>
         </main>
