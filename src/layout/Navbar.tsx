@@ -1,35 +1,27 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { SocialLinks } from '../components';
 
-import { MenuIcon } from '../components/icons/MenuIcon';
-import { CloseIcon } from '../components/icons/CloseIcon';
-import SocialLinks from '../components/SocialLinks';
+type NavLinks = {
+    name: string;
+    href: string;
+    icon: string;
+};
 
-const navLinks: { name: string; href: string }[] = [
-    { name: 'Home', href: '#' },
-    { name: 'Projects', href: '#ProjectsSection' },
-    { name: 'Skills', href: '#technologies' },
-    { name: 'Contact Me', href: '#contactMe' },
+const navLinks: NavLinks[] = [
+    { name: 'Experience', href: '#experience', icon: 'job-icon' },
+    { name: 'Projects', href: '#projects', icon: 'code-icon' },
+    { name: 'Technologies', href: '#technologies', icon: 'technologies-icon' },
+    { name: 'About me', href: '#about', icon: 'user-icon' },
+    { name: 'Contact', href: '#contact', icon: 'mail-icon' },
 ];
 
-function Navbar() {
+export function Navbar() {
     const [isActive, setIsActive] = useState(false);
-    const [isNavBarIsVisible, setIsNavBarIsVisible] = useState(true);
-    const lastScrollY = useRef(0);
-
-    const handleScroll = () => {
-        if (window.scrollY < lastScrollY.current) {
-            setIsNavBarIsVisible(true);
-        } else {
-            setIsNavBarIsVisible(false);
-        }
-
-        lastScrollY.current = window.scrollY;
-    };
+    const [isNavBarIsVisible, setIsNavBarIsVisible] = useState(false);
 
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', () => setIsNavBarIsVisible(window.scrollY > 0 ? true : false));
     }, []);
 
     return (
@@ -38,9 +30,11 @@ function Navbar() {
                 onClick={() => setIsActive(true)}
                 aria-label="open navigation menu"
                 title="Open menu"
-                className="text-second-font-color border-first-font-color/30 bg-nav-bg-color/40 hover:bg-nav-bg-color/60 fixed top-5 right-5 z-20 rounded-full border p-2 backdrop-blur-md transition lg:hidden"
+                className="text-second-font-color fixed top-5 right-5 z-20 size-10 cursor-pointer rounded-full transition lg:hidden"
             >
-                <MenuIcon />
+                <svg width={40} height={40}>
+                    <use href="/assets/sprite.svg#menu-icon" />
+                </svg>
             </button>
 
             <AnimatePresence>
@@ -53,9 +47,11 @@ function Navbar() {
                     >
                         <button
                             onClick={() => setIsActive(false)}
-                            className="border-first-font-color/30 bg-nav-bg-color/40 hover:bg-nav-bg-color/60 absolute top-5 right-5 rounded-full border p-2 transition"
+                            className="text-second-font-color absolute top-5 right-5 size-10 cursor-pointer rounded-full transition"
                         >
-                            <CloseIcon />
+                            <svg width={40} height={40}>
+                                <use href="/assets/sprite.svg#close-icon" />
+                            </svg>
                         </button>
 
                         {navLinks.map((item, i) => (
@@ -78,35 +74,24 @@ function Navbar() {
                 )}
             </AnimatePresence>
 
-            <motion.nav
-                animate={{
-                    scale: isNavBarIsVisible ? 1 : 0.9,
-                    y: isNavBarIsVisible ? 0 : -100,
-                    opacity: isNavBarIsVisible ? 1 : 0,
-                }}
-                transition={{ duration: 0.3 }}
-                className="text-second-font-color fixed top-5 left-1/2 z-20 hidden -translate-x-1/2 lg:flex"
+            <nav
+                className={`text-second-font-color fixed top-5 left-1/2 z-20 hidden -translate-x-1/2 items-center justify-center gap-7 rounded-full px-10 py-3 lg:flex ${isNavBarIsVisible && 'bg-nav-bg-color/40 border border-white/10 shadow-lg backdrop-blur-xl'}`}
             >
-                <div className="bg-nav-bg-color/40 flex items-center gap-8 rounded-full border border-white/10 px-8 py-3 shadow-lg backdrop-blur-xl">
-                    {navLinks.map((item) => (
-                        <a
-                            key={item.name}
-                            href={item.href}
-                            title={item.name}
-                            className="group relative text-sm tracking-wide uppercase transition"
-                        >
-                            <span className="group-hover:text-first-font-color relative transition">{item.name}</span>
-                            <span className="bg-first-font-color absolute -bottom-1 left-1/2 h-0.5 w-0 -translate-x-1/2 transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                    ))}
+                {navLinks.map((item) => (
+                    <a
+                        key={item.name}
+                        href={item.href}
+                        title={item.name}
+                        className="group flex items-center justify-center gap-2 text-sm tracking-wide transition"
+                    >
+                        <svg width={20} height={20} className="group-hover:text-primary-color block">
+                            <use href={`/assets/sprite.svg#${item.icon}`} />
+                        </svg>
 
-                    <div className="ml-2">
-                        <SocialLinks />
-                    </div>
-                </div>
-            </motion.nav>
+                        <span className="group-hover:text-primary-color leading-none font-bold">{item.name}</span>
+                    </a>
+                ))}
+            </nav>
         </>
     );
 }
-
-export default Navbar;
