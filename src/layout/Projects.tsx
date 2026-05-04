@@ -1,13 +1,11 @@
-import Container from '../components/Container';
+import { ProjectItem, Container } from '../components';
 import useProjects from '../hooks/useProjects';
 
-import ProjectItem from '../components/ProjectItem';
-
-function Projects() {
+export function Projects() {
     const { projects } = useProjects();
 
     return (
-        <Container className="pt-25" id="ProjectsSection">
+        <Container className="pt-25" id="projects">
             <h2 className="text-first-font-color text-4xl">Some of the projects i've done i did</h2>
             <section className="mt-10 flex flex-col gap-15">
                 {projects?.map((project, index) => (
@@ -17,5 +15,3 @@ function Projects() {
         </Container>
     );
 }
-
-export default Projects;

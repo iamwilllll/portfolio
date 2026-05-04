@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
-
-import Container from '../components/Container';
+import { Container } from '../components';
 
 import { LinkedinIcon } from '../components/icons/LinkedinIcon';
 import { DocIcon } from '../components/icons/DocIcon';
@@ -11,7 +10,7 @@ type linksListType = {
     icon?: ReactNode;
 };
 
-function Header() {
+export function Header() {
     const linksList: linksListType[] = [
         {
             name: 'CV',
@@ -67,5 +66,3 @@ function Header() {
         </Container>
     );
 }
-
-export default Header;

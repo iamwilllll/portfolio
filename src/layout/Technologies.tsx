@@ -1,8 +1,7 @@
-import Container from '../components/Container';
-import TechnologiesItem from '../components/TechnologiesItem';
+import { TechnologiesItem, Container } from '../components';
 import useTechnologies from '../hooks/useTechnologies';
 
-function Technologies() {
+export function Technologies() {
     const { technologies } = useTechnologies();
 
     return (
@@ -27,5 +26,3 @@ function Technologies() {
         </Container>
     );
 }
-
-export default Technologies;

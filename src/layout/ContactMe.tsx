@@ -1,22 +1,16 @@
 import { useForm } from 'react-hook-form';
-
-import Container from '../components/Container';
-import ErrorItem from '../components/ErrorItem';
-
 import type { FormDataT, MessagesT } from '../types';
-
-import { useContext, useFormSuccess } from '../context/store';
-
+import { useLoading, useFormSuccess } from '../context/store';
 import { useSubmitForm } from '../hooks/useSubmitForm';
-import SocialLinks from '../components/SocialLinks';
+import { SocialLinks, Container, ErrorItem } from '../components';
 
 const messages: MessagesT = {
     success: 'Thank you very much for contacting me. I have received your message and will respond as soon as possible.',
     error: 'Oops! There was a problem sending your message. Please try again in a moment.',
 };
 
-export default function ContactMe() {
-    const { isLoading } = useContext();
+export function ContactMe() {
+    const { isLoading } = useLoading();
     const { isSuccess, wasMistake } = useFormSuccess();
     const { submitForm } = useSubmitForm();
 
@@ -29,7 +23,7 @@ export default function ContactMe() {
     };
 
     return (
-        <Container id="contactMe" className="flex items-center lg:items-center lg:gap-5">
+        <Container id="contact" className="flex items-center lg:items-center lg:gap-5">
             <section className="hidden w-5/10 gap-3 lg:flex lg:flex-col">
                 <h2 className="text-first-font-color text-4xl font-bold">Get in touch.</h2>
                 <h3 className="text-first-font-color text-1xl font-light">i'd like to hear from you!</h3>
