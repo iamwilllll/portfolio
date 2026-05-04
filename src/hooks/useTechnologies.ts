@@ -1,12 +1,12 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useContext } from '../context/store';
+import { useLoading } from '../context/store';
 import { technologiesSchema, type TechnologiesT } from '../types/technologies.types';
 
 export default function useTechnologies() {
     const [technologies, setTechnologies] = useState<TechnologiesT>();
     const [error, setError] = useState<unknown | null>(null);
-    const { toggleLoading } = useContext();
+    const { toggleLoading } = useLoading();
     const URL = `${import.meta.env.VITE_BASEURL}/technologies.json`;
 
     useEffect(() => {
@@ -17,7 +17,6 @@ export default function useTechnologies() {
 
                 const response = await axios.get(URL);
                 const parse = technologiesSchema.parse(response.data);
-                console.log(parse);
                 setTechnologies(parse);
             } catch (err) {
                 setError(err);

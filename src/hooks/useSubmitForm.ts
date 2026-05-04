@@ -1,9 +1,9 @@
 import axios from 'axios';
-import { useContext, useFormSuccess } from '../context/store';
+import { useLoading, useFormSuccess } from '../context/store';
 import type { FormDataT } from '../types';
 
 export const useSubmitForm = () => {
-    const { toggleLoading } = useContext();
+    const { toggleLoading } = useLoading();
     const { toggleSuccess, toggleMistakes } = useFormSuccess();
     const URL = import.meta.env.VITE_SEND_FORM_URL;
 

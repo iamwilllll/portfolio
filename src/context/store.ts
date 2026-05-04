@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import type { useFormSuccessProps, useStoreProps } from '../types';
 
-export const useContext = create<useStoreProps>((set) => ({
+export const useLoading = create<useStoreProps>((set) => ({
     isLoading: false,
     toggleLoading: (newState) => set(() => ({ isLoading: newState })),
 }));

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useContext } from '../context/store';
+import { useLoading } from '../context/store';
 import { projectsSchema, type ProjectT } from '../types/projects.types';
 
 const URL = `${import.meta.env.VITE_BASEURL}/projects.json`;
@@ -8,7 +8,7 @@ const URL = `${import.meta.env.VITE_BASEURL}/projects.json`;
 export default function useProjects() {
     const [projects, setProjects] = useState<ProjectT[]>();
     const [error, setError] = useState<unknown | null>(null);
-    const { toggleLoading } = useContext();
+    const { toggleLoading } = useLoading();
 
     useEffect(() => {
         (async () => {

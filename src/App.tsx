@@ -1,19 +1,19 @@
-/* Import components */
-import Navbar from './layout/Navbar';
-import Header from './layout/Header';
-import Projects from './layout/Projects';
-import Technologies from './layout/Technologies';
-import ContactMe from './layout/ContactMe';
-import { useContext } from './context/store';
+import { useEffect } from 'react';
+import { useLoading } from './context/store';
+import { Navbar, Header, Projects, Technologies, ContactMe } from './layout';
 
 function App() {
-    const { isLoading } = useContext();
+    const { isLoading } = useLoading();
+
+    useEffect(() => {
+        document.body.style.overflow = isLoading ? 'hidden' : 'auto ';
+    }, [isLoading]);
 
     return (
         <main className="font-first-font m-auto max-w-[2256px]">
-            <div className={`${isLoading ? 'bg-modal-bg-color fixed z-2 flex size-full' : 'hidden'}`}>
+            <section className={`${isLoading ? 'bg-modal-bg-color fixed z-100 flex size-full' : 'hidden'}`}>
                 <div className="loader"></div>
-            </div>
+            </section>
 
             <Navbar />
             <Header />
