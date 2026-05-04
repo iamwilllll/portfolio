@@ -10,7 +10,7 @@
     --second-bg-color: #131313;
     --third-bg-color: #272727;
     --first-font-color: #ffffff;
-    --second-font-color: #ff2c2c;
+    --second-font-color: #c6c6c6;
     --third-font-color: #c1c1c1;
     --border-color: #303030;
 
@@ -31,6 +31,13 @@
     --color-border-color: var(--border-color);
     --color-modal-bg-color: var(--modal-bg-color);
 }
+
+*. svg {
+    display: block;
+}
+
+/* background: radial-gradient(circle, rgba(255, 44, 44, 1) 0%, rgba(0, 0, 0, 1) 100%) */
+/* background: linear-gradient(90deg, rgba(255, 44, 44, 1) 0%, rgba(0, 0, 0, 1) 100%) */
 
 .loader {
     width: 40px;
