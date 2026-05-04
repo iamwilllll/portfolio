@@ -6,12 +6,10 @@ type ContainerProps = {
     id?: string;
 };
 
-function Container({ children, className, id }: ContainerProps) {
+export function Container({ children, className, id }: ContainerProps) {
     return (
         <section className={`min-h-screen w-full p-10 lg:max-h-400 lg:px-50 ${className}`} id={id}>
             {children}
         </section>
     );
 }
-
-export default Container;

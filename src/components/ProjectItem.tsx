@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
-
-import TechnologiesItem from './TechnologiesItem';
+import { TechnologiesItem } from './index';
 
 import { GitHubIcon } from './icons/GitHubIcon';
 import { LinkIcon } from './icons/LinkIcon';
@@ -16,7 +15,7 @@ type linksListType = {
     icon: ReactNode;
 };
 
-function ProjectItem({ project }: ProjectItemProps) {
+export function ProjectItem({ project }: ProjectItemProps) {
     const { technologies, description, title, projectHoverUrl, gitHubLink, previewLink } = project;
 
     const linksList: linksListType[] = [
@@ -65,5 +64,3 @@ function ProjectItem({ project }: ProjectItemProps) {
         </aside>
     );
 }
-
-export default ProjectItem;

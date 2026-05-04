@@ -14,7 +14,7 @@ type SocialLinksType = {
     href: string;
 };
 
-function SocialLinks({ className }: SocialLinksProps) {
+export function SocialLinks({ className }: SocialLinksProps) {
     const socialLinks: SocialLinksType[] = [
         { icon: <GitHubIcon />, href: 'https://github.com/iamwilllll' },
         { icon: <LinkedinIcon />, href: 'https://www.linkedin.com/in/iamwilllll' },
@@ -41,5 +41,3 @@ function SocialLinks({ className }: SocialLinksProps) {
         </nav>
     );
 }
-
-export default SocialLinks;

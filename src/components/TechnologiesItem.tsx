@@ -4,7 +4,7 @@ type TechnologiesItemProps = {
     src: string;
 };
 
-function TechnologiesItem({ src, label, className }: TechnologiesItemProps) {
+export function TechnologiesItem({ src, label, className }: TechnologiesItemProps) {
     return (
         <li
             className={`font-second-font flex h-10 items-center justify-center rounded-full font-semibold text-white transition ${className}`}
@@ -14,5 +14,3 @@ function TechnologiesItem({ src, label, className }: TechnologiesItemProps) {
         </li>
     );
 }
-
-export default TechnologiesItem;
