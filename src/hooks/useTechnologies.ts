@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useLoading } from '../context/store';
 import { technologiesSchema, type TechnologiesT } from '../types/technologies.types';
 
-export default function useTechnologies() {
+export  function useTechnologies() {
     const [technologies, setTechnologies] = useState<TechnologiesT>();
     const [error, setError] = useState<unknown | null>(null);
     const { toggleLoading } = useLoading();
