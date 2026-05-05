@@ -10,8 +10,8 @@ function App() {
     }, [isLoading]);
 
     return (
-        <main className="font-first-font m-auto max-w-[2256px]">
-            <section className={`${isLoading ? 'bg-modal-bg-color fixed z-100 flex size-full' : 'hidden'}`}>
+        <main className="font-primary m-auto max-w-[2256px]">
+            <section className={`${isLoading ? 'bg-modal-surface fixed z-100 flex size-full' : 'hidden'}`}>
                 <div className="loader"></div>
             </section>
 

@@ -5,7 +5,7 @@ import { projectsSchema, type ProjectT } from '../types/projects.types';
 
 const URL = `${import.meta.env.VITE_BASEURL}/projects.json`;
 
-export  function useProjects() {
+export function useProjects() {
     const [projects, setProjects] = useState<ProjectT[]>();
     const [error, setError] = useState<unknown | null>(null);
     const { toggleLoading } = useLoading();

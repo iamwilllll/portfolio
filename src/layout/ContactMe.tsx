@@ -25,15 +25,15 @@ export function ContactMe() {
     return (
         <Container id="contact" className="flex items-center lg:items-center lg:gap-5">
             <section className="hidden w-5/10 gap-3 lg:flex lg:flex-col">
-                <h2 className="text-first-font-color text-4xl font-bold">Get in touch.</h2>
-                <h3 className="text-first-font-color text-1xl font-light">i'd like to hear from you!</h3>
-                <h3 className="text-first-font-color text-1xl font-light">
+                <h2 className="text-primary-text text-4xl font-bold">Get in touch.</h2>
+                <h3 className="text-primary-text text-1xl font-light">i'd like to hear from you!</h3>
+                <h3 className="text-primary-text text-1xl font-light">
                     If you have inquiries or just want to say hi, please use the contact form!
                 </h3>
 
                 <p
                     id="email"
-                    className="text-first-font-color cursor-pointer text-center underline transition hover:scale-105"
+                    className="text-primary-text cursor-pointer text-center underline transition hover:scale-105"
                     title="copy email"
                     aria-label="copy email"
                     tabIndex={1}
@@ -42,11 +42,11 @@ export function ContactMe() {
                     wilfrynbusiness@gmail.com
                 </p>
                 <div className="m-auto flex">
-                    <SocialLinks className="text-primary-color" />
+                    <SocialLinks className="text-brand" />
                 </div>
             </section>
 
-            <section className="border-border-color text-first-font-color mx-auto w-full rounded-2xl border p-6 shadow-lg lg:w-6/10">
+            <section className="border-default-border text-primary-text mx-auto w-full rounded-2xl border p-6 shadow-lg lg:w-6/10">
                 {(isSuccess || wasMistake) && (
                     <div
                         className={
@@ -69,8 +69,8 @@ export function ContactMe() {
                             id="name"
                             type="text"
                             className={
-                                'text-first-font-color mt-1 block w-full rounded-lg border bg-transparent px-3 py-2 shadow-sm placeholder:opacity-60 focus:ring-2 focus:ring-offset-1 focus:outline-none ' +
-                                `${errors.name ? 'border-red-400 focus:ring-red-200' : 'border-border-color focus:border-primary-color'}`
+                                'text-primary-text mt-1 block w-full rounded-lg border bg-transparent px-3 py-2 shadow-sm placeholder:opacity-60 focus:ring-2 focus:ring-offset-1 focus:outline-none ' +
+                                `${errors.name ? 'border-red-400 focus:ring-red-200' : 'border-default-border focus:border-brand'}`
                             }
                             {...register('name', { required: 'This field is required' })}
                         />
@@ -84,8 +84,8 @@ export function ContactMe() {
                             id="email"
                             type="email"
                             className={
-                                'text-first-font-color mt-1 block w-full rounded-lg border bg-transparent px-3 py-2 shadow-sm placeholder:opacity-60 focus:ring-2 focus:ring-offset-1 focus:outline-none ' +
-                                `${errors.email ? 'border-red-400 focus:ring-red-200' : 'border-border-color focus:border-primary-color'}`
+                                'text-primary-text mt-1 block w-full rounded-lg border bg-transparent px-3 py-2 shadow-sm placeholder:opacity-60 focus:ring-2 focus:ring-offset-1 focus:outline-none ' +
+                                `${errors.email ? 'border-red-400 focus:ring-red-200' : 'border-default-border focus:border-brand'}`
                             }
                             {...register('email', {
                                 required: 'This field is required',
@@ -102,8 +102,8 @@ export function ContactMe() {
                             id="information"
                             rows={5}
                             className={
-                                'text-first-font-color mt-1 block w-full rounded-lg border bg-transparent px-3 py-2 shadow-sm placeholder:opacity-60 focus:ring-2 focus:ring-offset-1 focus:outline-none ' +
-                                `${errors.information ? 'border-red-400 focus:ring-red-200' : 'border-border-color focus:border-primary-color'}`
+                                'text-primary-text mt-1 block w-full rounded-lg border bg-transparent px-3 py-2 shadow-sm placeholder:opacity-60 focus:ring-2 focus:ring-offset-1 focus:outline-none ' +
+                                `${errors.information ? 'border-red-400 focus:ring-red-200' : 'border-default-border focus:border-brand'}`
                             }
                             {...register('information', { required: 'This field is required' })}
                         />
@@ -115,8 +115,8 @@ export function ContactMe() {
                             type="submit"
                             disabled={isLoading}
                             className={
-                                'text-first-font-color inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium shadow-sm focus:ring-2 focus:ring-offset-1 focus:outline-none ' +
-                                `${isLoading ? 'bg-primary-color cursor-wait opacity-50' : 'bg-primary-color hover:bg-primary-color cursor-pointer hover:opacity-80'}`
+                                'text-primary-text inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium shadow-sm focus:ring-2 focus:ring-offset-1 focus:outline-none ' +
+                                `${isLoading ? 'bg-brand cursor-wait opacity-50' : 'bg-brand hover:bg-brand cursor-pointer hover:opacity-80'}`
                             }
                         >
                             {isLoading ? 'Sending...' : 'Send Message'}

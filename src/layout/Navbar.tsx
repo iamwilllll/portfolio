@@ -22,7 +22,8 @@ export function Navbar() {
 
     useEffect(() => {
         window.addEventListener('scroll', () => setIsNavBarIsVisible(window.scrollY > 0 ? true : false));
-    }, []);
+        document.body.style.overflow = isActive ? 'hidden' : 'auto ';
+    }, [isActive]);
 
     return (
         <>
@@ -30,7 +31,7 @@ export function Navbar() {
                 onClick={() => setIsActive(true)}
                 aria-label="open navigation menu"
                 title="Open menu"
-                className="text-second-font-color fixed top-5 right-5 z-20 size-10 cursor-pointer rounded-full transition lg:hidden"
+                className="text-secondary-text fixed top-5 right-5 z-20 size-10 cursor-pointer rounded-full transition lg:hidden"
             >
                 <svg width={40} height={40}>
                     <use href="/assets/sprite.svg#menu-icon" />
@@ -43,11 +44,11 @@ export function Navbar() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="text-second-font-color fixed inset-0 z-20 flex flex-col items-center justify-center gap-10 bg-black/80 backdrop-blur-xl"
+                        className="text-secondary-text fixed inset-0 z-20 flex flex-col items-center justify-center gap-10 bg-black/80 backdrop-blur-xl"
                     >
                         <button
                             onClick={() => setIsActive(false)}
-                            className="text-second-font-color absolute top-5 right-5 size-10 cursor-pointer rounded-full transition"
+                            className="text-secondary-text absolute top-5 right-5 z-20 size-10 cursor-pointer rounded-full transition"
                         >
                             <svg width={40} height={40}>
                                 <use href="/assets/sprite.svg#close-icon" />
@@ -63,9 +64,9 @@ export function Navbar() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.08 }}
                                 onClick={() => setIsActive(false)}
-                                className="hover:text-first-font-color text-3xl tracking-wide uppercase transition-all hover:tracking-widest"
+                                className="hover:text-brand tracking-wide uppercase transition-all hover:tracking-widest"
                             >
-                                {item.name}
+                                <p className="text-lg"> {item.name}</p>{' '}
                             </motion.a>
                         ))}
 
@@ -75,7 +76,7 @@ export function Navbar() {
             </AnimatePresence>
 
             <nav
-                className={`text-second-font-color fixed top-5 left-1/2 z-20 hidden -translate-x-1/2 items-center justify-center gap-7 rounded-full px-10 py-3 lg:flex ${isNavBarIsVisible && 'bg-nav-bg-color/40 border border-white/10 shadow-lg backdrop-blur-xl'}`}
+                className={`text-secondary-text fixed top-5 left-1/2 z-20 hidden -translate-x-1/2 items-center justify-center gap-7 rounded-full px-10 py-3 lg:flex ${isNavBarIsVisible && 'bg-nav-bg-color/40 border border-white/10 shadow-lg backdrop-blur-xl'}`}
             >
                 {navLinks.map((item) => (
                     <a
@@ -84,11 +85,11 @@ export function Navbar() {
                         title={item.name}
                         className="group flex items-center justify-center gap-2 text-sm tracking-wide transition"
                     >
-                        <svg width={20} height={20} className="group-hover:text-primary-color block">
+                        <svg width={20} height={20} className="group-hover:text-brand block">
                             <use href={`/assets/sprite.svg#${item.icon}`} />
                         </svg>
 
-                        <span className="group-hover:text-primary-color leading-none font-bold">{item.name}</span>
+                        <span className="group-hover:text-brand leading-none font-bold">{item.name}</span>
                     </a>
                 ))}
             </nav>

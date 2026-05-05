@@ -1,65 +1,126 @@
-import type { ReactNode } from 'react';
 import { Container } from '../components';
-
-import { LinkedinIcon } from '../components/icons/LinkedinIcon';
-import { DocIcon } from '../components/icons/DocIcon';
-
+import { motion } from 'motion/react';
 type linksListType = {
     href: string;
-    name: string;
-    icon?: ReactNode;
+    name?: string;
+    icon: string;
 };
 
-export function Header() {
-    const linksList: linksListType[] = [
-        {
-            name: 'CV',
-            href: 'https://docs.google.com/document/d/1m6El1D5_eSy4y-9MZOJ49R9_RGsTCesycKU_e96cg2A/edit?usp=sharing',
-            icon: <DocIcon />,
-        },
-        {
-            name: 'Linkedin',
-            href: 'https://www.linkedin.com/in/iamwilllll',
-            icon: <LinkedinIcon />,
-        },
-    ];
-    return (
-        <Container className="flex flex-col items-center justify-center lg:flex-row-reverse">
-            <figure className="flex w-11/12 items-center justify-center lg:w-1/2">
-                <img
-                    fetchPriority="high"
-                    src="./avatar.webp"
-                    alt="Avatar image"
-                    width={400}
-                    height={400}
-                    className="drop-shadow-primary-color mx-auto drop-shadow-[0px_0px_150px]"
-                />
-            </figure>
+const linksList: linksListType[] = [
+    {
+        name: 'Curriculum',
+        href: 'https://docs.google.com/document/d/1m6El1D5_eSy4y-9MZOJ49R9_RGsTCesycKU_e96cg2A/edit?usp=sharing',
+        icon: 'doc-icon',
+    },
+    {
+        href: 'https://www.linkedin.com/in/iamwilllll',
+        icon: 'linkedin-icon',
+    },
+    {
+        href: 'https://github.com/iamwilllll',
+        icon: 'github-icon',
+    },
+];
 
-            <div className="flex flex-col items-center gap-15 lg:w-1/2 lg:items-start">
-                <aside className="text-center">
-                    <h1 className="text-first-font-color mb-10 text-5xl font-semibold lg:text-left lg:text-7xl">
-                        HI, i'm Wilfryn
-                    </h1>
-                    <p className="text-third-font-color mt-0 text-xl font-light lg:text-left lg:text-xl lg:leading-10">
-                        As an learning <span className="text-first-font-color font-bold">full-stack Developer</span>, I combine
-                        technical skills with creativity to build functional and user-friendly applications. Beyond coding, I
-                        focus on clear communication and continuous learning to bring innovative ideas to life.
+export function Header() {
+    const fadeUp = {
+        initial: { y: 20, opacity: 0 },
+        animate: { y: 0, opacity: 1 },
+    };
+
+    return (
+        <Container className="mx-auto flex max-w-300 flex-col items-center justify-center gap-5">
+            <div className="flex flex-col-reverse items-center justify-center gap-5 md:flex-row">
+                <motion.figure
+                    className="flex items-center justify-center overflow-hidden rounded-full bg-linear-to-r from-[#ff2c2c] to-black"
+                    {...fadeUp}
+                    transition={{ duration: 1 }}
+                >
+                    <img
+                        fetchPriority="high"
+                        src="./avatar.png"
+                        alt="Wilfryn Viloria avatar"
+                        width={90}
+                        height={90}
+                        className="translate-y-1.5"
+                    />
+                </motion.figure>
+
+                <motion.div
+                    className="relative flex h-7 w-40 justify-center overflow-hidden rounded-full p-0.5"
+                    {...fadeUp}
+                    transition={{
+                        y: { duration: 1.5 },
+                        opacity: { duration: 1.5 },
+                    }}
+                >
+                    <motion.div
+                        className="absolute top-1/2 size-60 -translate-y-1/2 rounded-full bg-conic-[from_0deg,transparent,#ff2c2c,transparent]"
+                        animate={{ rotate: 360 }}
+                        transition={{
+                            duration: 5,
+                            repeat: Infinity,
+                            ease: 'linear',
+                        }}
+                    />
+
+                    <p className="bg-primary-surface text-brand relative z-10 flex h-full w-full items-center justify-center rounded-full text-center text-[13px]">
+                        Available for work
                     </p>
+                </motion.div>
+            </div>
+
+            <div className="flex flex-col items-center gap-3">
+                <aside>
+                    <motion.h1
+                        className="text-primary-text mb-5 text-center text-5xl font-bold"
+                        {...fadeUp}
+                        transition={{ duration: 0.5 }}
+                    >
+                        Hi,
+                        <motion.span
+                            className="bg-[linear-gradient(110deg,#ff2c2c,#ff9b9b,#ff2c2c)] bg-size-[200%_100%] bg-clip-text text-transparent"
+                            animate={{ backgroundPosition: ['200% 50%', '0% 50%'], y: 0, opacity: 1 }}
+                            initial={{ y: 20, opacity: 0 }}
+                            transition={{
+                                backgroundPosition: { duration: 10 },
+                                y: { duration: 1.5 },
+                                opacity: { duration: 1.5 },
+                                repeat: Infinity,
+                                ease: 'linear',
+                            }}
+                        >
+                            &nbsp; i'm Wilfryn Viloria
+                        </motion.span>
+                    </motion.h1>
+                    <motion.p
+                        className="text-tertiary-text t mt-0 text-center text-xl font-light"
+                        {...fadeUp}
+                        transition={{ duration: 1 }}
+                    >
+                        <span className="text-primary-text font-bold">full-stack Developer</span>, I combine technical skills with
+                        creativity to build functional and user-friendly applications. Beyond coding, I focus on clear
+                        communication and continuous learning to bring innovative ideas to life.
+                    </motion.p>
                 </aside>
 
-                <aside className="flex flex-col gap-2 md:flex-row lg:gap-5">
+                <aside className="flex w-full items-center justify-center gap-3.5 text-center">
                     {linksList.map((item, index) => (
-                        <a
+                        <motion.a
+                            {...fadeUp}
+                            transition={{ delay: index * 0.5, duration: 0.7 }}
                             key={index}
                             href={item.href}
                             title={item.name}
                             target="_blank"
-                            className="font-second-font hover:bg-primary-color focus:bg-primary-color flex h-12 w-55 cursor-pointer items-center justify-center gap-1 rounded-full bg-white text-xl font-semibold text-black transition hover:scale-110 hover:text-white focus:scale-110 focus:text-white"
+                            className="font-secondary hover:bg-brand focus:bg-brand flex h-12 cursor-pointer items-center justify-center gap-1 rounded-xl bg-white px-3.5 text-xl font-semibold text-black transition hover:scale-110 hover:text-white focus:scale-110 focus:text-white"
                         >
-                            {item.icon}
-                            {item.name}
-                        </a>
+                            <svg width={25} height={25} className="group-hover:text-brand">
+                                <use href={`/assets/sprite.svg#${item.icon}`} />
+                            </svg>
+
+                            {item.name && <p className="hidden md:block"> {item.name}</p>}
+                        </motion.a>
                     ))}
                 </aside>
             </div>
