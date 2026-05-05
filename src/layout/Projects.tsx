@@ -1,5 +1,5 @@
 import { ProjectItem, Container } from '../components';
-import {useProjects} from '../hooks';
+import { useProjects } from '../hooks';
 
 export function Projects() {
     const { projects } = useProjects();

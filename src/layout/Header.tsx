@@ -64,7 +64,7 @@ export function Header() {
                         }}
                     />
 
-                    <p className="bg-primary-surface text-brand relative z-10 flex h-full w-full items-center justify-center rounded-full text-center text-[13px]">
+                    <p className="bg-primary-surface font-secondary text-brand relative z-10 flex h-full w-full items-center justify-center rounded-full text-center text-[13px]">
                         Available for work
                     </p>
                 </motion.div>
