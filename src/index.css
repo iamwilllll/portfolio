@@ -40,6 +40,10 @@
     display: block;
 }
 
+button {
+    cursor: pointer;
+}
+
 .loader {
     width: 40px;
     aspect-ratio: 1;
