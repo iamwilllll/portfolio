@@ -9,6 +9,7 @@ type NavLinks = {
 };
 
 const navLinks: NavLinks[] = [
+    { name: 'Home', href: '#', icon: 'job-icon' },
     { name: 'Experience', href: '#experience', icon: 'job-icon' },
     { name: 'Projects', href: '#projects', icon: 'code-icon' },
     { name: 'Technologies', href: '#technologies', icon: 'technologies-icon' },
@@ -22,7 +23,11 @@ export function Navbar() {
 
     useEffect(() => {
         window.addEventListener('scroll', () => setIsNavBarIsVisible(window.scrollY > 0 ? true : false));
-        document.body.style.overflow = isActive ? 'hidden' : 'auto ';
+        document.body.style.overflow = isActive ? 'hidden' : 'auto';
+
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
     }, [isActive]);
 
     return (
@@ -31,7 +36,7 @@ export function Navbar() {
                 onClick={() => setIsActive(true)}
                 aria-label="open navigation menu"
                 title="Open menu"
-                className="text-secondary-text fixed top-5 right-5 z-20 size-10 cursor-pointer rounded-full transition lg:hidden"
+                className="text-secondary-text fixed top-5 right-5 z-20 size-10 rounded-full transition lg:hidden"
             >
                 <svg width={40} height={40}>
                     <use href="/assets/sprite.svg#menu-icon" />
@@ -48,7 +53,7 @@ export function Navbar() {
                     >
                         <button
                             onClick={() => setIsActive(false)}
-                            className="text-secondary-text absolute top-5 right-5 z-20 size-10 cursor-pointer rounded-full transition"
+                            className="text-secondary-text absolute top-5 right-5 z-20 size-10 rounded-full transition"
                         >
                             <svg width={40} height={40}>
                                 <use href="/assets/sprite.svg#close-icon" />
@@ -66,7 +71,7 @@ export function Navbar() {
                                 onClick={() => setIsActive(false)}
                                 className="hover:text-brand tracking-wide uppercase transition-all hover:tracking-widest"
                             >
-                                <p className="text-lg"> {item.name}</p>{' '}
+                                <p className="text-lg"> {item.name}</p>
                             </motion.a>
                         ))}
 
@@ -76,7 +81,7 @@ export function Navbar() {
             </AnimatePresence>
 
             <nav
-                className={`text-secondary-text fixed top-5 left-1/2 z-20 hidden -translate-x-1/2 items-center justify-center gap-7 rounded-full px-10 py-3 lg:flex ${isNavBarIsVisible && 'bg-nav-bg-color/40 border border-white/10 shadow-lg backdrop-blur-xl'}`}
+                className={`text-secondary-text fixed top-5 left-1/2 z-20 hidden w-200 -translate-x-1/2 items-center justify-center gap-7 rounded-full px-10 py-3 lg:flex ${isNavBarIsVisible && 'bg-nav-bg-color/40 border border-white/10 shadow-lg backdrop-blur-xl'}`}
             >
                 {navLinks.map((item) => (
                     <a

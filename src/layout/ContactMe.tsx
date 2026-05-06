@@ -31,16 +31,15 @@ export function ContactMe() {
                     If you have inquiries or just want to say hi, please use the contact form!
                 </h3>
 
-                <p
+                <button
                     id="email"
-                    className="text-primary-text cursor-pointer text-center underline transition hover:scale-105"
+                    className="text-primary-text text-center underline transition hover:scale-105"
                     title="copy email"
                     aria-label="copy email"
-                    tabIndex={1}
                     onClick={() => navigator.clipboard.writeText('wilfrynbusiness@gmail.com')}
                 >
                     wilfrynbusiness@gmail.com
-                </p>
+                </button>
                 <div className="m-auto flex">
                     <SocialLinks className="text-brand" />
                 </div>
@@ -116,7 +115,7 @@ export function ContactMe() {
                             disabled={isLoading}
                             className={
                                 'text-primary-text inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium shadow-sm focus:ring-2 focus:ring-offset-1 focus:outline-none ' +
-                                `${isLoading ? 'bg-brand cursor-wait opacity-50' : 'bg-brand hover:bg-brand cursor-pointer hover:opacity-80'}`
+                                `${isLoading ? 'bg-brand cursor-wait opacity-50' : 'bg-brand hover:bg-brand hover:opacity-80'}`
                             }
                         >
                             {isLoading ? 'Sending...' : 'Send Message'}

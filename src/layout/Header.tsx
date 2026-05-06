@@ -1,3 +1,4 @@
+import { useId } from 'react';
 import { Container } from '../components';
 import { motion } from 'motion/react';
 type linksListType = {
@@ -23,6 +24,8 @@ const linksList: linksListType[] = [
 ];
 
 export function Header() {
+    const key = useId();
+
     const fadeUp = {
         initial: { y: 20, opacity: 0 },
         animate: { y: 0, opacity: 1 },
@@ -64,9 +67,12 @@ export function Header() {
                         }}
                     />
 
-                    <p className="bg-primary-surface font-secondary text-brand relative z-10 flex h-full w-full items-center justify-center rounded-full text-center text-[13px]">
+                    <a
+                        href="#contact"
+                        className="bg-primary-surface font-secondary text-brand relative z-10 flex h-full w-full items-center justify-center rounded-full text-center text-[13px]"
+                    >
                         Available for work
-                    </p>
+                    </a>
                 </motion.div>
             </div>
 
@@ -105,23 +111,29 @@ export function Header() {
                 </aside>
 
                 <aside className="flex w-full items-center justify-center gap-3.5 text-center">
-                    {linksList.map((item, index) => (
-                        <motion.a
-                            {...fadeUp}
-                            transition={{ delay: index * 0.5, duration: 0.7 }}
-                            key={index}
-                            href={item.href}
-                            title={item.name}
-                            target="_blank"
-                            className="font-secondary hover:bg-brand focus:bg-brand flex h-12 cursor-pointer items-center justify-center gap-1 rounded-xl bg-white px-3.5 text-xl font-semibold text-black transition hover:scale-110 hover:text-white focus:scale-110 focus:text-white"
-                        >
-                            <svg width={25} height={25} className="group-hover:text-brand">
-                                <use href={`/assets/sprite.svg#${item.icon}`} />
-                            </svg>
+                    {linksList.map((item, index) => {
+                        return (
+                            <motion.a
+                                {...fadeUp}
+                                transition={{ delay: index * 0.5, duration: 0.7 }}
+                                key={key + item.href}
+                                href={item.href}
+                                title={item.name}
+                                target="_blank"
+                                className="font-secondary hover:bg-brand focus:bg-brand flex cursor-pointer items-center justify-center gap-1 rounded-xl bg-white p-3 text-xl font-semibold text-black transition hover:scale-110 hover:text-white focus:scale-110 focus:text-white"
+                            >
+                                <svg width={25} height={25} key={key + item.icon} className="group-hover:text-brand">
+                                    <use href={`/assets/sprite.svg#${item.icon}`} />
+                                </svg>
 
-                            {item.name && <p className="hidden md:block"> {item.name}</p>}
-                        </motion.a>
-                    ))}
+                                {item.name && (
+                                    <p className="hidden md:block" key={key + item.name}>
+                                        {item.name}
+                                    </p>
+                                )}
+                            </motion.a>
+                        );
+                    })}
                 </aside>
             </div>
         </Container>
