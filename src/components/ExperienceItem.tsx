@@ -1,19 +1,17 @@
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
+import type { ExperienceT } from '../types/experience.types';
 
 type ExperienceItemProps = {
     className?: string;
     index: number;
 
-    role: string;
-    organization: string;
-    summary: string;
-    date: string;
-    src?: string;
+    experienceItem: ExperienceT;
 };
 
-export function ExperienceItem({ className, index, role, organization, summary, date, src }: ExperienceItemProps) {
+export function ExperienceItem({ className, index, experienceItem }: ExperienceItemProps) {
     const [modalVisibility, setModalVisibility] = useState(false);
+    const { role, organization, summary, date, src } = experienceItem;
 
     useEffect(() => {
         document.body.style.overflow = modalVisibility ? 'hidden' : 'auto';
