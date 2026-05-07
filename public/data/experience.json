@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "role": "Senior Technician in Software Development",
+        "organization": "Universidad Catolica Nordestana (UCNE)",
+        "summary": "",
+        "date": "Current time"
+    },
+    {
+        "id": 2,
+        "role": "Computer Networks and Systems Technician",
+        "organization": "Instituto Politecnico Juan Sanchez Ramirez (PJSR)",
+        "summary": "",
+        "date": "2024 - 2025",
+        "src": "./assets/certificates/bachiller.jpg"
+    }
+]
