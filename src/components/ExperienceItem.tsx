@@ -11,7 +11,7 @@ type ExperienceItemProps = {
 
 export function ExperienceItem({ className, index, experienceItem }: ExperienceItemProps) {
     const [modalVisibility, setModalVisibility] = useState(false);
-    const { role, organization, summary, date, src } = experienceItem;
+    const { role, organization, summary, date, certificateSrc } = experienceItem;
 
     useEffect(() => {
         document.body.style.overflow = modalVisibility ? 'hidden' : 'auto';
@@ -23,7 +23,7 @@ export function ExperienceItem({ className, index, experienceItem }: ExperienceI
 
     return (
         <>
-            {modalVisibility && src && (
+            {modalVisibility && certificateSrc && (
                 <motion.div
                     onClick={() => setModalVisibility(false)}
                     className="bg-modal-surface fixed inset-0 z-50 flex cursor-pointer items-center justify-center p-5"
@@ -49,7 +49,7 @@ export function ExperienceItem({ className, index, experienceItem }: ExperienceI
                         </button>
 
                         <img
-                            src={src}
+                            src={certificateSrc}
                             className="border-tertiary-surface size-full rounded-xl border-4 object-contain"
                             alt={`Certificate of ${role}`}
                             loading="lazy"
@@ -89,7 +89,7 @@ export function ExperienceItem({ className, index, experienceItem }: ExperienceI
                         </p>
                     )}
 
-                    {src && (
+                    {certificateSrc && (
                         <button
                             className="text-brand font-secondary group/btn text-center"
                             onClick={() => setModalVisibility(true)}

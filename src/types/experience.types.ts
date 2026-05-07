@@ -6,7 +6,7 @@ export const experienceSchema = z.object({
     organization: z.string(),
     summary: z.string(),
     date: z.string(),
-    src: z.string().optional(),
+    certificateSrc: z.string().optional(),
 });
 
 export const experiencesSchema = z.array(experienceSchema);
