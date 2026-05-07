@@ -1,3 +1,7 @@
+export * from './projects.types';
+export * from './technologies.types';
+export * from './experience.types';
+
 export type FormDataT = {
     name: string;
     email: string;
