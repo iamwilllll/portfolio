@@ -66,8 +66,8 @@ export function ExperienceItem({ className, index, experienceItem }: ExperienceI
                 transition={{ duration: 0.6 }}
             >
                 <div className="absolute top-0 -left-5 flex h-full w-0.5 items-center justify-center">
-                    <div className="absolute inset-0 bg-linear-to-b from-transparent via-[#ff2c2c]/60 to-transparent opacity-60 transition duration-300 group-hover:opacity-100"></div>
-                    <div className="absolute top-1 z-10 size-4 rounded-full bg-[#ff2c2c] shadow-[0_0_25px_5px_#ff2c2c] transition duration-500 group-hover:scale-125 group-hover:shadow-[0_0_40px_10px_#ff2c2c]"></div>
+                    <div className="bg-brand/60 absolute inset-0 bg-linear-to-b from-transparent to-transparent opacity-60 transition duration-300 group-hover:opacity-100"></div>
+                    <div className="bg-brand absolute top-1 z-10 size-4 rounded-full shadow-[0_0_25px_5px_var(--color-primary-base)] transition duration-500 group-hover:scale-125 group-hover:shadow-[0_0_40px_10px_var(--color-primary-base)]"></div>
                 </div>
 
                 <aside className="text-secondary-text top-25 lg:sticky lg:w-2/5">
