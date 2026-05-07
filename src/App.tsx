@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { motion } from 'motion/react';
 import { useLoading } from './context/store';
 import { Navbar, Header, Experience, Projects, Technologies, About, ContactMe } from './layout';
 
@@ -15,9 +16,15 @@ function App() {
 
     return (
         <main className="font-primary m-auto max-w-[2500px]">
-            <section className={`${isLoading ? 'bg-modal-surface fixed z-100 flex size-full' : 'hidden'}`}>
+            <motion.section
+                className={`${isLoading ? 'bg-modal-surface fixed z-100 flex size-full' : 'hidden'}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1 }}
+            >
                 <div className="loader"></div>
-            </section>
+            </motion.section>
 
             <Navbar />
             <Header />

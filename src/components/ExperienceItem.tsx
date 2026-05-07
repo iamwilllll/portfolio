@@ -27,21 +27,36 @@ export function ExperienceItem({ className, index, role, organization, summary, 
         <>
             {modalVisibility && src && (
                 <motion.div
-                    onClick={(e) => e.stopPropagation()}
-                    className="bg-modal-surface fixed inset-0 z-50 flex items-center justify-center"
+                    onClick={() => setModalVisibility(false)}
+                    className="bg-modal-surface fixed inset-0 z-50 flex cursor-pointer items-center justify-center p-5"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
+                    transition={{ duration: 1 }}
                 >
-                    <button className="text-primary-text group absolute top-5 right-5" onClick={() => setModalVisibility(false)}>
-                        <svg width={40} height={40} className="group-hover:text-brand">
-                            <use href={`/assets/sprite.svg#close-icon`} />
-                        </svg>
-                    </button>
+                    <motion.div
+                        onClick={(e) => e.stopPropagation()}
+                        className="bg-secondary-surface outline-tertiary-surface relative w-full rounded-xl p-5 outline-4 lg:h-full lg:w-auto lg:p-10"
+                        initial={{ y: 10 }}
+                        animate={{ y: 0 }}
+                        transition={{ duration: 1 }}
+                    >
+                        <button
+                            className="text-primary-text group absolute top-1 right-1 hidden lg:block"
+                            onClick={() => setModalVisibility(false)}
+                        >
+                            <svg width={40} height={40} className="group-hover:text-brand">
+                                <use href={`/assets/sprite.svg#close-icon`} />
+                            </svg>
+                        </button>
 
-                    <figure className="flex h-full w-full place-items-center p-5">
-                        <img src={src} className="h-full w-full object-contain" alt={`Certificate of ${role}`} />
-                    </figure>
+                        <img
+                            src={src}
+                            className="border-tertiary-surface size-full rounded-xl border-4 object-contain"
+                            alt={`Certificate of ${role}`}
+                            loading="lazy"
+                        />
+                    </motion.div>
                 </motion.div>
             )}
 
