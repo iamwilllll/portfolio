@@ -5,3 +5,5 @@ export * from './SocialLinks';
 export * from './ProjectItem';
 export * from './SocialLinks';
 export * from './TechnologiesItem';
+export * from './Modal';
+export * from './CloseModalButton';
