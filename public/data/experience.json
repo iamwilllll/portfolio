@@ -12,6 +12,6 @@
         "organization": "Instituto Politecnico Juan Sanchez Ramirez (PJSR)",
         "summary": "",
         "date": "2024 - 2025",
-        "certificateSrc": "./assets/certificates/bachiller.jpg"
+        "certificateSrc": "/data/assets/certificates/bachiller.jpg"
     }
 ]
