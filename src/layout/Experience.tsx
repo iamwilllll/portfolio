@@ -9,7 +9,9 @@ export function Experience({ className }: { className?: string }) {
             <h2 className="text-primary-text text-4xl">Little bit of my experience in the field</h2>
 
             {experience &&
-                experience.slice(0, 3).map((item, indx) => <ExperienceItem key={indx} index={indx} experienceItem={item} />)}
+                experience
+                    .slice(0, 3)
+                    .map((item, index) => <ExperienceItem key={item.role} index={index} experienceItem={item} />)}
         </Container>
     );
 }

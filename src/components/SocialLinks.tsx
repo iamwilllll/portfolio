@@ -15,9 +15,9 @@ const socialLinks: SocialLinksType[] = [
 export function SocialLinks({ className }: { className?: string }) {
     return (
         <nav className="flex items-center gap-3">
-            {socialLinks.map((item, index) => (
+            {socialLinks.map((item) => (
                 <a
-                    key={index}
+                    key={item.icon}
                     className={`text-second-color hover:text-brand transition hover:scale-125 hover:cursor-pointer ${className}`}
                     title="icon"
                     href={item.href}

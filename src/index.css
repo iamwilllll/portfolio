@@ -36,8 +36,10 @@
     --color-default-border: var(--border-default);
 }
 
-*. svg {
+svg {
     display: block;
+    width: 25px;
+    height: 25px;
 }
 
 button {

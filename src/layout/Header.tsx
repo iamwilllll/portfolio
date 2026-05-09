@@ -36,7 +36,7 @@ export function Header() {
         <Container className="mx-auto flex max-w-300 flex-col items-center justify-center gap-5">
             <div className="flex flex-col-reverse items-center justify-center gap-5 md:flex-row">
                 <motion.figure
-                    className="flex items-center justify-center overflow-hidden rounded-full bg-linear-to-r from-[#ff2c2c] to-black"
+                    className="from-brand flex items-center justify-center overflow-hidden rounded-full bg-linear-to-r to-black"
                     {...fadeUp}
                     transition={{ duration: 1 }}
                 >
@@ -59,7 +59,7 @@ export function Header() {
                     }}
                 >
                     <motion.div
-                        className="absolute top-1/2 size-60 -translate-y-1/2 rounded-full bg-conic-[from_0deg,transparent,#ff2c2c,transparent]"
+                        className="absolute top-1/2 size-60 -translate-y-1/2 rounded-full bg-conic-[from_0deg,transparent,var(--color-primary-base),transparent]"
                         animate={{ rotate: 360 }}
                         transition={{
                             duration: 5,
@@ -86,7 +86,7 @@ export function Header() {
                     >
                         Hi,
                         <motion.span
-                            className="bg-[linear-gradient(110deg,#ff2c2c,#ff9b9b,#ff2c2c)] bg-size-[200%_100%] bg-clip-text text-transparent"
+                            className="bg-[linear-gradient(110deg,var(--color-primary-base),#ff9b9b,var(--color-primary-base))] bg-size-[200%_100%] bg-clip-text text-transparent"
                             animate={{ backgroundPosition: ['200% 50%', '0% 50%'], y: 0, opacity: 1 }}
                             initial={{ y: 20, opacity: 0 }}
                             transition={{
@@ -123,7 +123,7 @@ export function Header() {
                                 target="_blank"
                                 className="font-secondary hover:bg-brand focus:bg-brand flex cursor-pointer items-center justify-center gap-1 rounded-xl bg-white p-3 text-xl font-semibold text-black transition hover:scale-110 hover:text-white focus:scale-110 focus:text-white"
                             >
-                                <svg width={25} height={25} key={key + item.icon} className="group-hover:text-brand">
+                                <svg key={key + item.icon} className="group-hover:text-brand">
                                     <use href={`/assets/sprite.svg#${item.icon}`} />
                                 </svg>
 

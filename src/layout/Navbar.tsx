@@ -87,6 +87,7 @@ export function Navbar() {
                     <a
                         key={item.name}
                         href={item.href}
+                        rel="noopener noreferrer"
                         title={item.name}
                         className="group flex items-center justify-center gap-2 text-sm tracking-wide transition"
                     >
