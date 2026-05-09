@@ -20,7 +20,7 @@ export function Modal({ className, children, modalVisibility, setModalVisibility
     return (
         <motion.div
             onClick={() => setModalVisibility(false)}
-            className={`bg-modal-surface max-size-screen fixed inset-0 z-50 flex cursor-pointer items-center justify-center p-5 ${className}`}
+            className={`bg-modal-surface min-size-screen fixed inset-0 z-50 flex items-center justify-center p-5 ${className}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

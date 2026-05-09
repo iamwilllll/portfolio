@@ -7,3 +7,4 @@ export * from './SocialLinks';
 export * from './TechnologiesItem';
 export * from './Modal';
 export * from './CloseModalButton';
+export * from './ProjectModal';

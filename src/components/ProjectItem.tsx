@@ -1,66 +1,97 @@
-import { TechnologiesItem } from './index';
-
-import type { ProjectT } from '../types/projects.types';
+import { useState } from 'react';
+import { motion } from 'motion/react';
+import { TechnologiesItem, ProjectModal } from './index';
+import type { ProjectT } from '../types';
 
 type ProjectItemProps = {
     project: ProjectT;
+    index: number;
 };
 
-type linksListType = {
-    name: string;
-    href: string;
-    icon: string;
-};
+export function ProjectItem({ project, index }: ProjectItemProps) {
+    const [modalVisibility, setModalVisibility] = useState(false);
+    const [animationComplete, setAnimationComplete] = useState(false);
 
-export function ProjectItem({ project }: ProjectItemProps) {
-    const { technologies, description, title, projectHoverUrl, gitHubLink, previewLink } = project;
-
-    const linksList: linksListType[] = [
-        { name: 'GitHub', href: gitHubLink, icon: 'github-icon' },
-        { name: 'Preview', href: previewLink, icon: 'link-icon' },
-    ];
+    const { technologies, description, title, projectHoverUrl } = project;
 
     return (
-        <aside className="flex flex-col gap-5 lg:flex-row lg:justify-start">
-            <figure className="border-default-border h-75 w-full overflow-hidden rounded-[30px] border-[0.1px] md:m-auto md:max-w-125 md:min-w-125 md:items-center lg:mx-0 lg:items-start">
-                <img
-                    src={projectHoverUrl}
-                    alt="project hover"
-                    loading="lazy"
-                    className="h-15/10 w-15/10 object-cover transition-transform duration-500 hover:scale-125"
+        <>
+            {modalVisibility && projectHoverUrl && (
+                <ProjectModal closeModal={() => setModalVisibility(false)} modalVisibility={modalVisibility} project={project} />
+            )}
+
+            <motion.div className="group relative overflow-hidden rounded-xl p-px" initial="initial" whileHover="hover">
+                <motion.div
+                    className={`pointer-events-none absolute top-1/2 left-1/2 size-500 -translate-1/2 rounded-full bg-conic-[from_0deg,transparent,#ff2c2c,transparent] opacity-0 ${animationComplete && 'group-hover:opacity-100'}`}
+                    variants={{
+                        initial: {
+                            rotate: 0,
+                        },
+                        hover: {
+                            rotate: 360,
+                            transition: {
+                                rotate: {
+                                    duration: 2,
+                                    repeat: Infinity,
+                                    ease: 'linear',
+                                },
+                                opacity: {
+                                    duration: 0.3,
+                                },
+                            },
+                        },
+                    }}
                 />
-            </figure>
 
-            <div className="flex w-full flex-col gap-5">
-                <h3 className="text-primary-text text-3xl font-bold md:text-center lg:text-left">{title}</h3>
-                <ul className="flex w-full flex-wrap gap-3 md:justify-center lg:justify-start">
-                    {technologies.map((item, index) => (
-                        <TechnologiesItem
-                            key={index}
-                            label={item.name}
-                            src={item.icon}
-                            className="bg-secondary-surface hover:bg-tertiary-surface w-full max-w-40 gap-3"
+                <motion.aside
+                    className="bg-tertiary-surface relative z-10 flex max-w-100 cursor-pointer flex-col gap-5 overflow-hidden rounded-xl p-3"
+                    onClick={() => setModalVisibility(true)}
+                    onAnimationComplete={() => setAnimationComplete(true)}
+                    initial="initial"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: '-100px' }}
+                    variants={{
+                        initial: {
+                            y: 20,
+                            opacity: 0,
+                        },
+                        visible: {
+                            y: 0,
+                            opacity: 1,
+                            transition: {
+                                duration: 0.6,
+                                delay: index * 0.2,
+                            },
+                        },
+                    }}
+                >
+                    <figure className="border-default-border relative h-50 w-full overflow-hidden rounded-xl border-[0.1px] p-5">
+                        <div className="before:bg-brand after:bg-brand z-1 before:absolute before:-top-20 before:-right-20 before:size-20 before:rounded-full before:shadow-[0_0_500px_130px_white] before:content-[''] after:absolute after:-bottom-20 after:-left-20 after:size-20 after:rounded-full after:shadow-[0_0_400px_150px_var(--color-brand)] after:content-['']"></div>
+                        <div className="from-modal-surface absolute inset-0 z-10 size-full bg-linear-to-t"></div>
+
+                        <img
+                            className="absolute inset-0 top-1/2 left-1/2 z-5 size-9/10 -translate-1/2 rounded-xl object-contain"
+                            loading="lazy"
+                            src={projectHoverUrl}
+                            alt={`hover picture of project ${title}`}
                         />
-                    ))}
-                </ul>
-                <p className="text-primary-text text-xl md:text-center lg:text-left">{description}</p>
-                <div className="mx-auto flex flex-wrap items-center justify-center gap-3 lg:m-0 lg:justify-start">
-                    {linksList.map((item, index) => (
-                        <a
-                            key={index}
-                            href={item.href}
-                            target="_blank"
-                            className="bg-tertiary-surface font-secondary text-primary-text hover:bg-brand flex h-10 w-35 items-center justify-center gap-2 rounded-full font-bold transition hover:scale-110"
-                        >
-                            <svg width={25} height={25}>
-                                <use href={`/assets/sprite.svg#${item.icon}`} />
-                            </svg>
 
-                            {item.name}
-                        </a>
-                    ))}
-                </div>
-            </div>
-        </aside>
+                        <h3 className="text-primary-text absolute bottom-1 left-2 z-20 text-xl font-bold">{title}</h3>
+                    </figure>
+
+                    <ul className="flex flex-wrap gap-1">
+                        {technologies.slice(0, 4).map((item) => (
+                            <TechnologiesItem key={item.label} {...item} />
+                        ))}
+                    </ul>
+
+                    <p className="text-primary-text line-clamp-2 text-lg">{description}</p>
+                    <div className="bg-default-border my-2 h-px w-full rounded"></div>
+                    <p className="text-brand/70 group-hover:text-brand font-secondary transition-colors duration-300 ease-out">
+                        Show more <span> &gt;</span>
+                    </p>
+                </motion.aside>
+            </motion.div>
+        </>
     );
 }
