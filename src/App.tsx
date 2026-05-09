@@ -15,13 +15,13 @@ function App() {
     }, [isLoading]);
 
     return (
-        <main className="font-primary m-auto max-w-[2500px]">
+        <main className="font-primary m-auto max-w-[2500px] lg:px-50">
             <motion.section
-                className={`${isLoading ? 'bg-modal-surface fixed z-100 flex size-full' : 'hidden'}`}
+                className={`${isLoading ? 'bg-modal-surface fixed left-0 z-100 flex size-full' : 'hidden'}`}
                 initial={{ opacity: 0 }}
+                transition={{ duration: 1 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 1 }}
             >
                 <div className="loader"></div>
             </motion.section>
