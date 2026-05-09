@@ -5,14 +5,15 @@ export const projectSchema = z.object({
     title: z.string(),
     description: z.string(),
     projectHoverUrl: z.string(),
+    technicalChallenge: z.array(z.string()).optional(),
     technologies: z.array(
         z.object({
-            name: z.string(),
+            label: z.string(),
             icon: z.string(),
         })
     ),
-    gitHubLink: z.string(),
-    previewLink: z.string(),
+    gitHubLink: z.string().optional(),
+    previewLink: z.string().optional(),
 });
 
 export const projectsSchema = z.array(projectSchema);
