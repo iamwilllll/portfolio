@@ -25,16 +25,16 @@ export function ProjectModal({ closeModal, modalVisibility, project }: ProjectMo
                 animate={{ y: 0 }}
                 transition={{ duration: 1 }}
             >
-                <nav className="bg-secondary-surface border-default-border flex h-25 items-center justify-between border-b p-5">
+                <nav className="bg-secondary-surface border-default-border flex flex-col-reverse items-center justify-between border-b p-5 md:h-25 md:flex-row">
                     <h3 className="text-3xl font-bold">{title}</h3>
-                    <div className="flex place-items-center gap-5">
+                    <div className="mb-2 flex place-items-center gap-5 lg:mb-0">
                         {projectActions.map((item) => (
                             <a
                                 key={item.href}
                                 href={item.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="font-xl first bg-brand first-of-type:border-default-border mr-2.5 flex rounded-xl px-3 py-2 text-center font-semibold transition duration-500 first-of-type:mr-0 first-of-type:flex-row-reverse first-of-type:gap-2.5 first-of-type:border first-of-type:bg-transparent hover:scale-105"
+                                className="font-xl first bg-brand first-of-type:border-default-border mr-2.5 flex place-items-center rounded-xl px-3 py-2 text-center text-[10px] font-semibold transition duration-500 first-of-type:mr-0 first-of-type:flex-row-reverse first-of-type:gap-2.5 first-of-type:border first-of-type:bg-transparent hover:scale-105 lg:text-lg"
                             >
                                 <p>{item.label}</p>
                                 <svg>
@@ -47,8 +47,8 @@ export function ProjectModal({ closeModal, modalVisibility, project }: ProjectMo
                 </nav>
 
                 <div className="overflow-y-auto p-5">
-                    <section className="mb-5 flex gap-5">
-                        <figure className="border-default-border bg-tertiary-surface w-7/10 rounded-xl border-2 p-1">
+                    <section className="mb-5 flex flex-col gap-5 lg:flex-row">
+                        <figure className="border-default-border bg-tertiary-surface rounded-xl border-2 p-1 lg:w-7/10">
                             <img
                                 src={projectHoverUrl}
                                 alt={`Project hover view of ${title}`}
@@ -57,7 +57,7 @@ export function ProjectModal({ closeModal, modalVisibility, project }: ProjectMo
                             />
                         </figure>
 
-                        <section className="flex w-3/10 flex-col gap-5">
+                        <section className="flex flex-col gap-5 lg:w-3/10">
                             <aside className="border-default-border bg-tertiary-surface rounded-xl border-2 p-3">
                                 <h4 className="mb-2 text-xl font-semibold">Technologies</h4>
                                 <ul className="flex flex-wrap gap-2.5">

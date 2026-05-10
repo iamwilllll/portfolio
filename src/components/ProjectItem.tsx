@@ -20,7 +20,7 @@ export function ProjectItem({ project, index }: ProjectItemProps) {
                 <ProjectModal closeModal={() => setModalVisibility(false)} modalVisibility={modalVisibility} project={project} />
             )}
 
-            <motion.div className="group relative overflow-hidden rounded-xl p-px" initial="initial" whileHover="hover">
+            <motion.div className="group relative m-auto overflow-hidden rounded-xl p-px" initial="initial" whileHover="hover">
                 <motion.div
                     className={`pointer-events-none absolute top-1/2 left-1/2 size-500 -translate-1/2 rounded-full bg-conic-[from_0deg,transparent,#ff2c2c,transparent] opacity-0 ${animationComplete && 'group-hover:opacity-100'}`}
                     variants={{
@@ -44,7 +44,7 @@ export function ProjectItem({ project, index }: ProjectItemProps) {
                 />
 
                 <motion.aside
-                    className="bg-tertiary-surface relative z-10 flex max-w-100 cursor-pointer flex-col gap-5 overflow-hidden rounded-xl p-3"
+                    className="bg-tertiary-surface relative z-10 flex max-w-90 cursor-pointer flex-col gap-5 overflow-hidden rounded-xl p-3"
                     onClick={() => setModalVisibility(true)}
                     onAnimationComplete={() => setAnimationComplete(true)}
                     initial="initial"
@@ -86,7 +86,7 @@ export function ProjectItem({ project, index }: ProjectItemProps) {
                     </ul>
 
                     <p className="text-primary-text line-clamp-2 text-lg">{description}</p>
-                    <div className="bg-default-border my-2 h-px w-full rounded"></div>
+                    <div className="bg-default-border my-1 h-px w-full rounded-xl"></div>
                     <p className="text-brand/70 group-hover:text-brand font-secondary transition-colors duration-300 ease-out">
                         Show more <span> &gt;</span>
                     </p>
