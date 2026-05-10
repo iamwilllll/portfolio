@@ -2,15 +2,15 @@
     {
         "id": 1,
         "role": "Senior Technician in Software Development",
-        "organization": "Universidad Catolica Nordestana (UCNE)",
-        "summary": "",
-        "date": "Current time"
+        "organization": "Universidad Católica Nordestana (UCNE)",
+        "summary": "Currently pursuing a technical degree focused on software development. Gaining hands-on experience in programming, data structures, web development, databases, and best development practices. Focused on building efficient, scalable solutions to real-world problems.",
+        "date": "Present"
     },
     {
         "id": 2,
         "role": "Computer Networks and Systems Technician",
-        "organization": "Instituto Politecnico Juan Sanchez Ramirez (PJSR)",
-        "summary": "",
+        "organization": "Instituto Politécnico Juan Sánchez Ramírez (PJSR)",
+        "summary": "Technical training in computer networks and systems. Experienced in structured cabling, network configuration, hardware maintenance, technical support, and basic cybersecurity principles. Developed strong problem-solving skills in real-world technical environments.",
         "date": "2024 - 2025",
         "certificateSrc": "/data/assets/certificates/bachiller.jpg"
     }

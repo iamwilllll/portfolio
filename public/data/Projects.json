@@ -2,38 +2,42 @@
     {
         "id": 1,
         "title": "Docify API Documentation",
-        "description": "A minimal and powerful Express middleware for automatically generating and serving API documentation with zero configuration.",
+        "description": "A lightweight and powerful Express middleware that automatically generates and serves API documentation with zero configuration. Designed to simplify developer workflows and improve API usability.",
         "projectHoverUrl": "/data/assets/projects/docifyAPI.png",
         "technologies": [
-            { "label": "Node", "icon": "/data/assets/icons/node.svg" },
             { "label": "TypeScript", "icon": "/data/assets/icons/typescript.svg" },
+            { "label": "React", "icon": "/data/assets/icons/react.svg" },
             { "label": "Express", "icon": "/data/assets/icons/express.svg" },
             { "label": "MongoDB", "icon": "/data/assets/icons/mongodb.svg" },
-            { "label": "React", "icon": "/data/assets/icons/react.svg" },
             { "label": "Tailwind", "icon": "/data/assets/icons/tailwind.svg" }
         ],
-
         "technicalChallenge": [
-            "Show frontend from NPM package",
-            "Create a user-friendly interface for API documentation",
-            "Ensure seamless integration with Express applications",
-            "Optimize performance for large APIs",
-            "Implement real-time updates for API documentation"
+            "Bundled and served a frontend UI directly from an NPM package",
+            "Designed an intuitive and developer-friendly API documentation interface",
+            "Ensured seamless integration with existing Express applications",
+            "Optimized performance for handling large-scale APIs",
+            "Implemented dynamic updates to keep documentation in sync with endpoints"
         ],
-
         "gitHubLink": "https://github.com/iamwilllll/DocifyAPI",
         "previewLink": "https://www.npmjs.com/package/docify-api"
     },
     {
         "id": 2,
-        "title": "Auth REST API",
-        "description": "This REST API provides a complete authentication and authorization system based on JWT (JSON Web Tokens). It is designed for modern web applications and supports secure session management, access control, and password recovery.",
+        "title": "Authentication REST API",
+        "description": "A robust REST API that provides a complete authentication and authorization system using JWT. Built for modern web applications with a focus on security, scalability, and maintainability.",
         "projectHoverUrl": "/data/assets/projects/apiRest.png",
         "technologies": [
-            { "label": "Node", "icon": "/data/assets/icons/node.svg" },
+            { "label": "Node.js", "icon": "/data/assets/icons/node.svg" },
             { "label": "TypeScript", "icon": "/data/assets/icons/typescript.svg" },
             { "label": "Express", "icon": "/data/assets/icons/express.svg" },
             { "label": "MongoDB", "icon": "/data/assets/icons/mongodb.svg" }
+        ],
+        "technicalChallenge": [
+            "Implemented secure JWT-based authentication and authorization flows",
+            "Designed scalable and modular architecture for maintainability",
+            "Handled password encryption and secure credential storage",
+            "Built role-based access control for protected routes",
+            "Developed password recovery and session management features"
         ],
         "gitHubLink": "https://github.com/iamwilllll/authentication-api-rest",
         "previewLink": "https://authentication-api-rest.onrender.com"
