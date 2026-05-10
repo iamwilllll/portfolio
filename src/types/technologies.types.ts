@@ -5,7 +5,7 @@ export const technologySchema = z.object({
     title: z.string(),
     technologies: z.array(
         z.object({
-            name: z.string(),
+            label: z.string(),
             icon: z.string(),
         })
     ),
