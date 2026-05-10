@@ -11,12 +11,10 @@ export function About({ className }: { className?: string }) {
                 viewport={{ once: true }}
                 className="relative mx-auto w-full max-w-sm"
             >
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-red-500/30 to-transparent blur-2xl"></div>
-
                 <motion.img
-                    src="/profile.jpg"
+                    src="/profile.png"
                     alt="Wilfryn Viloria"
-                    className="relative z-10 w-full rounded-2xl object-cover shadow-xl"
+                    className="relative z-10 w-full rounded-2xl object-cover shadow-[0_0_50px_0_var(--color-primary-base)]"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.3 }}
                     loading="lazy"
