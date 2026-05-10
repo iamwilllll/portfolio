@@ -81,7 +81,7 @@ export function Navbar() {
             </AnimatePresence>
 
             <nav
-                className={`text-secondary-text fixed top-5 left-1/2 z-20 hidden w-200 -translate-x-1/2 items-center justify-center gap-7 rounded-full px-10 py-3 lg:flex ${isNavBarIsVisible && 'bg-nav-bg-color/40 border border-white/10 shadow-lg backdrop-blur-xl'}`}
+                className={`text-secondary-text fixed top-5 left-1/2 z-20 hidden w-210 -translate-x-1/2 items-center justify-center gap-7 rounded-full px-10 py-3 lg:flex ${isNavBarIsVisible && 'bg-nav-bg-color/40 border border-white/10 shadow-lg backdrop-blur-xl'}`}
             >
                 {navLinks.map((item) => (
                     <a
