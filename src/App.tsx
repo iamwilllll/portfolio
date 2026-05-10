@@ -15,7 +15,7 @@ function App() {
     }, [isLoading]);
 
     return (
-        <main className="font-primary m-auto max-w-[2500px] lg:px-50">
+        <main className="font-primary m-auto max-w-[2500px] px-10 lg:px-50">
             <motion.section
                 className={`${isLoading ? 'bg-modal-surface fixed left-0 z-100 flex size-full' : 'hidden'}`}
                 initial={{ opacity: 0 }}

@@ -8,7 +8,7 @@ type ContainerProps = {
 
 export function Container({ children, className, id }: ContainerProps) {
     return (
-        <section className={`min-h-screen w-full lg:max-h-400 ${className}`} id={id}>
+        <section className={`min-h-screen w-full lg:max-h-450 ${className}`} id={id}>
             {children}
         </section>
     );
